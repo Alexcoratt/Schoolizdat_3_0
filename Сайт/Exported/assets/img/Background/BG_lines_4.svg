@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1939.809" height="735.053" viewBox="0 0 1939.809 735.053">
+  <defs>
+    <filter id="Контур_190" x="0" y="0" width="1939.415" height="397.423" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Контур_191" x="0.394" y="338" width="1939.415" height="397.052" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="BG_lines_4" transform="translate(10.015 -3437.274)">
+    <g transform="matrix(1, 0, 0, 1, -10.02, 3437.27)" filter="url(#Контур_190)">
+      <path id="Контур_190-2" data-name="Контур 190" d="M-1491,3833.952s214.638,3.244,248.7-120.014-152.45-126.5-95.687,0,1049.309,569.254,1767.77,0" transform="translate(1500.02 -3613.27)" fill="none" stroke="#fff" stroke-width="2" opacity="0.2"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -10.02, 3437.27)" filter="url(#Контур_191)">
+      <path id="Контур_191-2" data-name="Контур 191" d="M429.779,3833.952s-214.638,3.244-248.7-120.014,152.45-126.5,95.687,0c-48.078,107.146-767.483,441.169-1424,194.63A1271.6,1271.6,0,0,1-1491,3713.938" transform="translate(1501.02 -3275.27)" fill="none" stroke="#fff" stroke-width="2" opacity="0.2"/>
+    </g>
+  </g>
+</svg>
