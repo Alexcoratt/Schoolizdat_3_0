@@ -1,8 +1,24 @@
 import "./rslider_lib.js";
+import "./horisontal_sliders_lib.js";
+
+function checkWidth(){
+    if (window.innerWidth > 825){
+        if (!rSlider.isOn){
+            rSlider.on();
+        }
+        rSlider.completeSlide();
+    }
+    else{
+        if (rSlider.isOn){
+            rSlider.off();
+        }
+    }
+}
 
 var rSlider = new RSlider(document.getElementsByClassName("rslider")[0], document.getElementsByClassName("rslider-indicator"));
 
 rSlider.slideTo(rSlider.getCurrentSlideNum());
+checkWidth();
 
 var fbSlider = new CycledHatSlider(document.getElementsByClassName("fb-slider")[0], 700);
 fbSlider.calculateParams();
@@ -12,9 +28,9 @@ $("#next-button").click(getListener(fbSlider.slideNext, fbSlider));
 
 window.addEventListener("resize", function(){
     fbSlider.durationOff(fbSlider);
+    checkWidth();
     setTimeout(function(){
         fbSlider.calculateParams(fbSlider);
-        rSlider.completeSlide(rSlider);
         fbSlider.durationOn(fbSlider);
     }, fbSlider.duration);
 }, {passive: false});

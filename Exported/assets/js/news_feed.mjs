@@ -1,4 +1,4 @@
-import "./news_feed_lib.js";
+import "./horisontal_sliders_lib.js";
 
 var feed = new Feed(document.getElementsByClassName("carousel slide")[0]);
 var item2 = feed.getItem(0).getClone();
