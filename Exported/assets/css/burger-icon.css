@@ -1,0 +1,41 @@
+.burger-line.top.active {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger-line.middle.active {
+  transform: rotate(135deg);
+  opacity: 0;
+  /*width: 0;*/
+}
+
+.burger-line.bottom.active {
+  transform: translateY(-8px) rotate(495deg);
+  /*width: 0;*/
+  /*opacity: 0;*/
+}
+
+.burger-icon {
+  margin-right: 10px;
+  cursor: pointer;
+  max-width: 40px;
+  margin-left: auto;
+  z-index: 5;
+}
+
+.burger-line {
+  width: 26px;
+  height: 3px;
+  background-color: #FFFFFF;
+  margin: 5px;
+  border-radius: 26px;
+  transition-duration: .2s;
+}
+
+.burger-line.active {
+  background-color: #000000;
+}
+
+.burger-line.focused {
+  box-shadow: #000000 0 0 4px;
+}
+
