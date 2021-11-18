@@ -21,20 +21,31 @@ class SingleBox{    // класс отдельной новостной ячей
         this.newsParagraph.innerHTML = this.splitText(text);
     }
     
-    setImage(url="default.png"){
+    setImageUrl(url="../default.png"){
         this.image.style.backgroundImage = "url(\"" + url + "\")";
     }
     
-    getText(){
+    getImageUrl(noSplit=false){
+        var url = this.image.style.backgroundImage;
+        if (noSplit){
+            return url;
+        }
+        return url.substring(5, url.length - 2);
+    }
+    
+    getText(isFull=false){
+        if (isFull){
+            return this.fullText;
+        }
         return this.newsParagraph.innerHTML;
     }
     
-    getHeader(){
+    getHeading(){
         return this.newsHeading.innerHTML;
     }
     
     setDefault(){
-        this.setImage();
+        this.setImageUrl();
         this.setHeading();
         this.setText();
     }
@@ -66,6 +77,10 @@ class BoxRow{
     
     getBox(num){    // получение новости с номером num на данной новостной странице
         return this.singleBoxList[num];
+    }   
+    
+    getLength(){
+        return this.singleBoxList.length;
     }
     
     addBox(singleBox){  // добавление новости на данную новостную страницу
@@ -91,6 +106,10 @@ class CarouselItem{ // страница карусели
     
     getRow(num){
         return this.boxRows[num];
+    }
+    
+    getLength(){
+        return this.boxRows.length;
     }
     
     addRow(boxRow){
@@ -124,13 +143,25 @@ class Feed{ // класс ленты новостей, содержит ново
         for (var i = 0; i < this.items.length; i++)
             this.items[i] = new CarouselItem(this.items[i], carItemRowClass, singleBoxHeadingClass, singleBoxParagraphClass, singleBoxImageClass);
         
-        this.indicators = Array.from(document.getElementsByClassName("carousel-indicator")); // массив индикаторов (Indicator)
+        this.indicatorsNode = this.node.getElementsByClassName("carousel-indicators")[0];
+        this.indicators = Array.from(this.indicatorsNode.getElementsByClassName("carousel-indicator")); // массив индикаторов (Indicator)
         for (var i = 0; i < this.indicators.length; i++)
             this.indicators[i] = new Indicator(this.indicators[i]);
+        
+        for (var i = this.indicators.length; i > this.items.length; i--){
+            this.removeLastIndicator();
+        }
+        for (var i = this.indicators.length; i < this.items.length; i++){
+            this.addIndicator(i + 1);
+        }
     }
     
     getItem(num){
         return this.items[num];
+    }
+    
+    getLength(){
+        return this.items.length;
     }
     
     getSingleBox(itemNum, rowNum, boxNum){
@@ -154,17 +185,22 @@ class Feed{ // класс ленты новостей, содержит ново
         this.items = [];
     }
     
-    addIndicator(){
+    addIndicator(innerText="indicator"){
         var newIndicator = this.indicators[0].getClone();
         newIndicator.deactivate()
         newIndicator.setTarget(this.indicators.length)
         this.indicators.push(newIndicator);
-        this.indicators_node.appendChild(newIndicator.node);
+        this.indicatorsNode.appendChild(newIndicator.node);
+        newIndicator.node.innerHTML = innerText;
     }
     
     removeIndicator(num){
         this.indicators_node.removeChild(this.indicators_list[num].node);
         this.indicators.splice(num, 1);
+    }
+    
+    removeLastIndicator(){
+        this.removeIndicator(this.indicators.length - 1);
     }
     
     slideTo(num){  // переворачивает страницу мгновенно без анимации прокрутки
@@ -310,12 +346,31 @@ class HatSlider{
         this.setPosition(this.getSelfPos());
     }
     
+    getItem(num){
+        return this.items[num];
+    }
+    
     getSelfPos(){
         return "relative"
     }
     
     getItemPos(){
         return "initial"
+    }
+    
+    addItem(){
+        var len = this.items.length;
+        this.items.push(this.items[len - 1].getClone());
+        this.node.appendChild(this.items[len].node);
+    }
+    
+    removeItem(num){
+        this.node.removeChild(this.items[num]);
+        this.items.splice(num, 1);
+    }
+    
+    removeLastItem(){
+        this.removeItem(this.items.length - 1);
     }
     
     calculateParams(self=this){
@@ -367,6 +422,10 @@ class HatSlider{
     
     setPosition(position){
         this.node.style.position = position;
+    }
+    
+    getItem(num){
+        return this.items[num];
     }
     
     slideTo(num, self=this, noDuration=false){
