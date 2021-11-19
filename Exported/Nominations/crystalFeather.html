@@ -20,7 +20,7 @@
 <body>
     <div id="navbar" class="navbar">
         <div class="col navbar-col"><a class="logo-link" href="../index.html"></a></div>
-        <div class="col navbar-col" style="justify-content: center;height: initial;">
+        <div class="col navbar-col season-theme">
             <div>
                 <h1 style="font-size: 17px;text-align: center;">ТЕМА СЕЗОНА:</h1>
                 <h1 style="font-size: 22px;text-align: center;">СОЦИАЛЬНАЯ МОБИЛЬНОСТЬ</h1>
@@ -50,8 +50,8 @@
         <h1 class="rslide-heading" style="color: #565151;">номинации</h1>
         <h1 class="display-2 text-uppercase text-center d-xl-flex justify-content-xl-center align-items-xl-center backheading" style="font-family: Montserrat, sans-serif;color: #565151;">н о м и н а ц и и</h1>
     </div>
-    <div class="d-xl-flex justify-content-xl-center align-items-xl-center nom-row" id="nom-row">
-        <div class="row d-xl-flex" style="justify-content: center;">
+    <div id="nom-row">
+        <div class="row nom-row">
             <div class="col nom-col"><a class="nom-link" href="massMedia.html">
                     <div class="nom-box">
                         <div class="nom-box-tile">
@@ -135,40 +135,62 @@
                 </a></div>
         </div>
     </div>
-    <div style="/*height: 100vh;*/display: grid;justify-content: center;">
-        <div style="width: 1300px;">
-            <div class="d-xl-flex justify-content-xl-center align-items-xl-center main-title-box">
-                <h1 class="main-tile-title-box">Хрустальное перо</h1>
-            </div>
-            <div class="d-xl-flex align-items-xl-center main-tile-box"><img src="../assets/img/Nominations/Feather2.svg" style="height: 120px;justify-self: center;margin-top: auto;margin-bottom: auto;">
-                <p class="text-left main-text-box" style="font-size: 20px;">В целях поддержки и создания необходимых условий для развития одаренной молодежи, привлечение талантливой молодёжи к обучению в&nbsp;<span style="color: var(--teal);font-weight: bold;">Санкт-Петербургский государственный университет промышленных технологий и дизайна</span>&nbsp;в&nbsp;<span style="color: var(--additional);font-weight: bold;">Высшей школе печати и медиатехнологий</span>&nbsp;на направлениях подготовки "Журналистика" и "Издательское дело" проводится Всероссийская олимпиада школьников "Хрустальное перо".<br></p><button class="btn btn-primary file-button" type="button">Положение об олимпиаде</button>
-            </div>
-        </div>
-        <div class="d-xl-flex nom-page-box" style="display: grid!important;grid-template-columns: 27% 27% 40%;grid-template-areas: &quot;title title title&quot; &quot;reg reg reg&quot; &quot;selection selection final&quot;;grid-gap: 20px 25px;padding: 10px;padding-top: 35px;padding-bottom: 20px;max-width: 1300px;margin-bottom: 80px;">
-            <h1 class="text-center direction-title-box" style="color: var(--additional);grid-area: title;">Олимпиада проводится в два этапа:</h1>
-            <div style="background: rgba(0,204,153,0.11);grid-area: reg;padding: 20px;margin: -12px;margin-bottom: 25px;">
-                <p style="color: var(--dark);text-align: center;font-size: 20px;margin-top: auto;margin-bottom: auto;">Регистрация участников осуществляется до 25 февраля 2022 года.</p>
-            </div>
-            <p style="color: var(--dark);text-align: center;font-size: 20px;margin-top: auto;margin-bottom: auto;grid-area: selection;"><strong>Отборочный этап</strong><br>проводится в заочной форме в период<br><span style="color: var(--teal);font-weight: bold;">1 декабря 2021 года - 25 февраля 2022 года</span></p>
-            <p style="color: var(--dark);text-align: center;font-size: 20px;margin-top: auto;margin-bottom: auto;grid-area: final;"><strong>Заключительный этап</strong><br>проводится в дистанционном формате<br><span style="color: var(--teal);font-weight: bold;">7 марта 2022 года - 25 марта 2022 года</span></p>
-            <div>
-                <div style="width: 70%;height: 40px;border-radius: 20px;background: var(--additional);display: flex;justify-content: center;align-items: center;margin-right: auto;margin-left: auto;">
-                    <p style="margin: 0;">1 этап</p>
+    <div>
+        <div class="nom-page-box-container">
+            <div class="nom-page-box">
+                <div class="d-xl-flex justify-content-xl-center align-items-xl-center main-title-box">
+                    <h1 class="main-tile-title-box">Хрустальное перо</h1>
                 </div>
-                <p style="color: var(--dark);text-align: center;font-size: 20px;margin-top: auto;margin-bottom: auto;">Публикация творческих работ в направлениях номинации "Жанры журналистики":<br>- Статья<br>- Репортаж<br>-Интервью<br></p>
-            </div>
-            <div>
-                <div style="width: 70%;height: 40px;border-radius: 20px;background: var(--additional);display: flex;justify-content: center;align-items: center;margin-right: auto;margin-left: auto;">
-                    <p style="margin: 0;">2 этап</p>
+                <div class="d-xl-flex align-items-xl-center main-tile-box" style="display: block;">
+                    <div class="nom-page-box-content-container">
+                        <div class="nom-image-container"><img src="../assets/img/Nominations/Feather2.svg" style="height: 120px;"></div>
+                        <p class="text-left main-text-box" style="font-size: 20px;">В целях поддержки и создания необходимых условий для развития одаренной молодежи, привлечение талантливой молодёжи к обучению в&nbsp;<span style="color: var(--teal);font-weight: bold;">Санкт-Петербургский государственный университет промышленных технологий и дизайна</span>&nbsp;в&nbsp;<span style="color: var(--additional);font-weight: bold;">Высшей школе печати и медиатехнологий</span>&nbsp;на направлениях подготовки "Журналистика" и "Издательское дело" проводится Всероссийская олимпиада школьников "Хрустальное перо".<br></p>
+                    </div>
+                    <div style="display: flex;justify-content: center;"><a class="file-button" href="../assets/documents/Polozhenie_olimpiada_2021.pdf" target="_blank">Положение об олимпиаде</a></div>
                 </div>
-                <p style="color: var(--dark);text-align: center;font-size: 20px;margin-top: auto;margin-bottom: auto;">Тест (онлайн), состоящий из вопросов, проверяющих знания в области русского языка, литературы, обществознания, журналистики<br></p>
             </div>
         </div>
-        <div>
-            <h1 class="rslide-heading" style="color: #000000;">Победители сезона 2020-21</h1>
-            <div style="margin-bottom: 60px;"></div>
+        <div class="nom-page-box-container">
+            <div class="nom-page-box" style="padding: 10px;padding-top: 35px;padding-bottom: 20px;margin-bottom: 80px;max-width: 1400px;">
+                <div>
+                    <h1 class="text-center direction-title-box" style="color: var(--additional);grid-area: title;">Олимпиада проводится в два этапа:</h1>
+                    <div style="background: rgba(0,204,153,0.11);grid-area: reg;padding: 20px;margin: -12px;margin-bottom: 25px;">
+                        <p style="color: var(--dark);text-align: center;font-size: 20px;margin-top: auto;margin-bottom: auto;">Регистрация участников осуществляется до 25 февраля 2022 года.</p>
+                    </div>
+                    <div id="step-container">
+                        <div class="high-step-box">
+                            <p style="color: var(--dark);text-align: center;font-size: 20px;margin-top: auto;margin-bottom: auto;grid-area: selection;"><strong>Отборочный этап</strong><br>проводится в заочной форме в период<br><span style="color: var(--teal);font-weight: bold;">1 декабря 2021 года - 25 февраля 2022 года</span></p>
+                            <div style="margin-top: 39px;">
+                                <div class="step-box">
+                                    <div class="step-heading">
+                                        <p style="margin: 0;">1 этап</p>
+                                    </div>
+                                    <p class="step-paragraph">Публикация творческих работ в направлениях номинации "Жанры журналистики":<br>- Статья<br>- Репортаж<br>- Интервью<br></p>
+                                </div>
+                                <div class="step-box">
+                                    <div class="step-heading">
+                                        <p style="margin: 0;">2 этап</p>
+                                    </div>
+                                    <p class="step-paragraph">Тест (онлайн), состоящий из вопросов, проверяющих знания в области русского языка, литературы, обществознания, журналистики<br></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="high-step-box">
+                            <p style="color: var(--dark);text-align: center;font-size: 20px;margin-top: auto;margin-bottom: auto;grid-area: final;"><strong>Заключительный этап</strong><br>проводится в дистанционном формате<br><span style="color: var(--teal);font-weight: bold;">7 марта 2022 года - 25 марта 2022 года</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div style="margin-top: 30px;display: flex;justify-content: center;"><button class="btn btn-primary" type="button" style="width: 80%;padding: 30px;border-radius: 20px;border-style: none;color: #ffffff;font-size: 24px;background: var(--additional);">Список победителей олимпиады "Хрустальное перо"</button></div>
+        <div class="nom-page-box-container">
+            <div>
+                <h1 class="rslide-heading" style="color: #000000;margin-left: 20px;margin-right: 20px;">Победители сезона 2020-21</h1>
+                <div style="margin-bottom: 60px;"></div>
+            </div>
+        </div>
+        <div class="nom-page-box-container">
+            <div style="margin-top: 30px;display: flex;justify-content: center;"><button class="btn btn-primary" type="button" style="width: 80%;padding: 30px;border-radius: 20px;border-style: none;color: #ffffff;font-size: 24px;background: var(--additional);margin-bottom: 64px;">Список победителей олимпиады "Хрустальное перо"</button></div>
+        </div>
     </div>
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>

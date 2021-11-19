@@ -113,11 +113,13 @@
 .news-column {
   width: 31%;
   max-width: 312px;
+  margin: auto;
 }
 
 .news-row {
   padding: 10px;
   margin: 0;
+  justify-content: center;
 }
 
 .carousel-indicator {
@@ -146,7 +148,7 @@
   width: inherit;
   height: inherit;
   z-index: 2;
-  display: flex;
+  display: none;
 }
 
 .article-box {
@@ -217,5 +219,118 @@
 .article-slider-button:hover {
   background-color: var(--main);
   color: #ffffff;
+}
+
+#article-slider-inner.ready {
+  display: flex;
+}
+
+.nom-page-box-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.nom-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 644px) {
+  .main-tile-box {
+    display: block;
+  }
+}
+
+.nom-row {
+  justify-content: center;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.nom-page-box-content-container {
+  display: flex;
+  grid-gap: 0 56px;
+}
+
+@media (max-width: 644px) {
+  .nom-page-box-content-container {
+    display: block;
+  }
+}
+
+.step-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 12px;
+  border-style: solid;
+  border-color: #599d21;
+  border-width: thin;
+  border-radius: 34px;
+  padding: 14px;
+}
+
+.step-heading {
+  min-width: 74px;
+  height: 40px;
+  border-radius: 20px;
+  background: var(--additional);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.step-paragraph {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 20px;
+  color: var(--dark);
+  padding: 14px;
+}
+
+.high-step-box {
+  width: 50%;
+  margin-top: 32px;
+}
+
+#step-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 992px) {
+  #step-container {
+    display: block;
+  }
+}
+
+@media (max-width: 992px) {
+  .high-step-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 392px) {
+  .step-box {
+    display: block;
+  }
+}
+
+.direction-box {
+  max-width: 382px;
+}
+
+.direction-title-box {
+  text-align: center;
+}
+
+@media (max-width: 874px) {
+  .news-row {
+    display: block;
+  }
 }
 

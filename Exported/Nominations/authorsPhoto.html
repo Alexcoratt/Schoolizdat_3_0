@@ -20,7 +20,7 @@
 <body>
     <div id="navbar" class="navbar">
         <div class="col navbar-col"><a class="logo-link" href="../index.html"></a></div>
-        <div class="col navbar-col" style="justify-content: center;height: initial;">
+        <div class="col navbar-col season-theme">
             <div>
                 <h1 style="font-size: 17px;text-align: center;">ТЕМА СЕЗОНА:</h1>
                 <h1 style="font-size: 22px;text-align: center;">СОЦИАЛЬНАЯ МОБИЛЬНОСТЬ</h1>
@@ -50,8 +50,8 @@
         <h1 class="rslide-heading" style="color: #565151;">номинации</h1>
         <h1 class="display-2 text-uppercase text-center d-xl-flex justify-content-xl-center align-items-xl-center backheading" style="font-family: Montserrat, sans-serif;color: #565151;">н о м и н а ц и и</h1>
     </div>
-    <div class="d-xl-flex justify-content-xl-center align-items-xl-center nom-row" id="nom-row">
-        <div class="row d-xl-flex" style="justify-content: center;">
+    <div id="nom-row">
+        <div class="row nom-row">
             <div class="col nom-col"><a class="nom-link" href="massMedia.html">
                     <div class="nom-box">
                         <div class="nom-box-tile">
@@ -135,25 +135,32 @@
                 </a></div>
         </div>
     </div>
-    <div style="/*height: 100vh;*/display: grid;justify-content: center;">
-        <div style="width: 1300px;">
-            <div class="d-xl-flex justify-content-xl-center align-items-xl-center main-title-box">
-                <h1 class="main-tile-title-box">Авторская фотография</h1>
-            </div>
-            <div class="d-xl-flex align-items-xl-center main-tile-box"><img src="../assets/img/Nominations/Photo2.svg" style="width: 100px;margin-top: auto;margin-bottom: auto;justify-self: center;">
-                <p class="text-left main-text-box">К рассмотрению принимаются фотоработы, выполненные в соответствии с заданием, заявленным Учредителем Конкурса в данном конкурсном сезоне. Участнику необходимо прислать 5 фотографий отвечающих теме сезона.<br><br>Номинация предполагает&nbsp;<span style="color: var(--teal);font-weight: bold;">индивидуальное</span>&nbsp;участие.</p>
-            </div>
-        </div>
-        <div class="d-xl-flex nom-page-box">
-            <div class="rslide-text container animated nom-page-main-box">
-                <h1 class="nom-page-title-box">Требования для публикации работы:</h1>
-                <p class="nom-page-text-box"><span style="color: var(--teal);font-weight: bold;font-size: 30px;">1.</span>&nbsp;Серия фотографий, соответствующих теме конкурса, в количестве 5 штук, фотографии должны быть 800 пикселей по ширине, формат jpg. Сохранение для web и устройств (функция save for web).<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">2.</span>&nbsp;Каждая фотография должна иметь название-расшифровку (подпись).<br><br></p>
+    <div>
+        <div class="nom-page-box-container">
+            <div class="nom-page-box">
+                <div class="main-title-box">
+                    <h1 class="main-tile-title-box container">Авторская фотография</h1>
+                </div>
+                <div class="main-tile-box">
+                    <div class="nom-image-container"><img src="../assets/img/Nominations/Photo2.svg" style="width: 100px;margin-top: auto;margin-bottom: auto;justify-self: center;"></div>
+                    <p class="main-text-box">К рассмотрению принимаются фотоработы, выполненные в соответствии с заданием, заявленным Учредителем Конкурса в данном конкурсном сезоне. Участнику необходимо прислать 5 фотографий отвечающих теме сезона.<br><br>Номинация предполагает<br><span style="color: var(--teal);font-weight: bold;">индивидуальное</span>&nbsp;участие.</p>
+                </div>
             </div>
         </div>
-        <div class="d-xl-flex nom-page-box" style="margin-bottom: 100px;">
-            <div class="rslide-text container animated nom-page-main-box">
-                <h1 class="nom-page-title-box">Критерии оценки работы:</h1>
-                <p class="nom-page-text-box"><span style="color: var(--teal);font-weight: bold;font-size: 30px;">1.</span>&nbsp;Творческая идея.<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">2.</span>&nbsp;Техническое качество (оценка уровня обработки материала. Приветствуется минимальная техническая обработка: контрастность, кадрирование, цветокоррекция).<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">3.</span>&nbsp;Художественное исполнение (выразительность художественного решения, композиция кадра).<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">4.</span>&nbsp;Реализация авторского замысла (уникальность идеи в реализации подхода к съемки, актуальность, социальная значимость).<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">5.</span>&nbsp;Сюжетная составляющая.<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">6.</span>&nbsp;Оригинальность.<br></p>
+        <div class="nom-page-box-container">
+            <div class="nom-page-box">
+                <div class="rslide-text container animated nom-page-main-box">
+                    <h1 class="nom-page-title-box">Требования для публикации работы:</h1>
+                    <p class="nom-page-text-box"><span style="color: var(--teal);font-weight: bold;font-size: 30px;">1.</span>&nbsp;Серия фотографий, соответствующих теме конкурса, в количестве 5 штук, фотографии должны быть 800 пикселей по ширине, формат jpg. Сохранение для web и устройств (функция save for web).<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">2.</span>&nbsp;Каждая фотография должна иметь название-расшифровку (подпись).<br><br></p>
+                </div>
+            </div>
+        </div>
+        <div class="nom-page-box-container">
+            <div class="nom-page-box" style="margin-bottom: 100px;">
+                <div class="rslide-text container nom-page-main-box">
+                    <h1 class="nom-page-title-box">Критерии оценки работы:</h1>
+                    <p class="nom-page-text-box"><span style="color: var(--teal);font-weight: bold;font-size: 30px;">1.</span>&nbsp;Творческая идея.<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">2.</span>&nbsp;Техническое качество (оценка уровня обработки материала. Приветствуется минимальная техническая обработка: контрастность, кадрирование, цветокоррекция).<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">3.</span>&nbsp;Художественное исполнение (выразительность художественного решения, композиция кадра).<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">4.</span>&nbsp;Реализация авторского замысла (уникальность идеи в реализации подхода к съемки, актуальность, социальная значимость).<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">5.</span>&nbsp;Сюжетная составляющая.<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">6.</span>&nbsp;Оригинальность.<br></p>
+                </div>
             </div>
         </div>
     </div>

@@ -158,6 +158,14 @@ class ArticleSlider extends HatSlider{
         return this.items.length;
     }
     
+    ready(){
+        $(this.node).addClass("ready");
+    }
+    
+    unready(){
+        $(this.node).removeClass("ready");
+    }
+    
     slideTo(num, self=this, noDuration=false){
         for (var i = 0; i < self.items.length; i++){
             self.items[i].deactivate();
@@ -173,6 +181,7 @@ class ArticleSlider extends HatSlider{
 }
 
 var articleSlider = new ArticleSlider(document.getElementById("article-slider-inner"));
+articleSlider.unready();
 articleSlider.calculateParams();
 $("#prev-button").click(getListener(articleSlider.slidePrevious, articleSlider));
 $("#next-button").click(getListener(articleSlider.slideNext, articleSlider));
@@ -180,6 +189,5 @@ window.addEventListener("resize", getListener(articleSlider.calculateParams, art
 
 var newsCar = new NewsCarousel(document.getElementById("carousel"), articleSlider);
 newsCar.getSingleBox(0, 0, 1).setText();
-newsCar.getSingleBox(0, 0, 2).setImageUrl();
-newsCar.getSingleBox(0, 0, 2).setHeading();
 newsCar.bindAll();
+articleSlider.ready();

@@ -365,7 +365,7 @@ class HatSlider{
     }
     
     removeItem(num){
-        this.node.removeChild(this.items[num]);
+        this.node.removeChild(this.items[num].node);
         this.items.splice(num, 1);
     }
     

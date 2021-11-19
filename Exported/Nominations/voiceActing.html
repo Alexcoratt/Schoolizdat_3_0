@@ -20,7 +20,7 @@
 <body>
     <div id="navbar" class="navbar">
         <div class="col navbar-col"><a class="logo-link" href="../index.html"></a></div>
-        <div class="col navbar-col" style="justify-content: center;height: initial;">
+        <div class="col navbar-col season-theme">
             <div>
                 <h1 style="font-size: 17px;text-align: center;">ТЕМА СЕЗОНА:</h1>
                 <h1 style="font-size: 22px;text-align: center;">СОЦИАЛЬНАЯ МОБИЛЬНОСТЬ</h1>
@@ -50,8 +50,8 @@
         <h1 class="rslide-heading" style="color: #565151;">номинации</h1>
         <h1 class="display-2 text-uppercase text-center d-xl-flex justify-content-xl-center align-items-xl-center backheading" style="font-family: Montserrat, sans-serif;color: #565151;">н о м и н а ц и и</h1>
     </div>
-    <div class="d-xl-flex justify-content-xl-center align-items-xl-center nom-row" id="nom-row">
-        <div class="row d-xl-flex" style="justify-content: center;">
+    <div id="nom-row">
+        <div class="row nom-row">
             <div class="col nom-col"><a class="nom-link" href="massMedia.html">
                     <div class="nom-box">
                         <div class="nom-box-tile">
@@ -136,24 +136,30 @@
         </div>
     </div>
     <div style="/*height: 100vh;*/display: grid;justify-content: center;">
-        <div style="width: 1300px;">
-            <div class="d-xl-flex justify-content-xl-center align-items-xl-center main-title-box">
-                <h1 class="main-tile-title-box">Озвучка</h1>
-            </div>
-            <div class="d-xl-flex align-items-xl-center main-tile-box"><img src="../assets/img/Nominations/Voice2.svg" style="height: 120px;justify-self: center;/*margin-top: auto;*//*margin-bottom: auto;*/">
-                <p class="text-left main-text-box">К рассмотрению принимаются аудиофайл отвечающему теме сезона и правилам конкурса. Участнику необходимо записать аудио дорожку в формате .wav или .mp3 выбрав один из представленных текстов (отрывок из современного произведения, кино, пьесы, статьи).<br><br>Номинация предполагает&nbsp;<span style="color: var(--teal);font-weight: bold;">индивидуальное</span>&nbsp;участие.<br></p>
-            </div>
-        </div>
-        <div class="d-xl-flex nom-page-box">
-            <div class="rslide-text container animated nom-page-main-box">
-                <h1 class="nom-page-title-box">Требования для публикации работы:</h1>
-                <p class="nom-page-text-box"><span style="color: var(--teal);font-weight: bold;font-size: 30px;">1.</span>&nbsp;Выбрать только один из предложенных текстов.<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">2.</span>&nbsp;Отправить аудио дорожку в формате .wav или .mp3.<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">3.</span>&nbsp;Озвучивать может только один человек.<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">4.</span>&nbsp;Запрещено использовать программы для изменения голоса.<br></p>
+        <div class="nom-page-box-container">
+            <div class="nom-page-box">
+                <div class="d-xl-flex justify-content-xl-center align-items-xl-center main-title-box">
+                    <h1 class="main-tile-title-box">Озвучка</h1>
+                </div>
+                <div class="d-xl-flex align-items-xl-center main-tile-box"><img src="../assets/img/Nominations/Voice2.svg" style="height: 120px;justify-self: center;/*margin-top: auto;*//*margin-bottom: auto;*/">
+                    <p class="text-left main-text-box">К рассмотрению принимаются аудиофайл отвечающему теме сезона и правилам конкурса. Участнику необходимо записать аудио дорожку в формате .wav или .mp3 выбрав один из представленных текстов (отрывок из современного произведения, кино, пьесы, статьи).<br><br>Номинация предполагает<br><span style="color: var(--teal);font-weight: bold;">индивидуальное</span>&nbsp;участие.<br></p>
+                </div>
             </div>
         </div>
-        <div class="d-xl-flex nom-page-box" style="margin-bottom: 100px;">
-            <div class="rslide-text container animated nom-page-main-box">
-                <h1 class="nom-page-title-box">Критерии оценки работы:</h1>
-                <p class="nom-page-text-box"><span style="color: var(--teal);font-weight: bold;font-size: 30px;">1.</span>&nbsp;Мастерство голосовой подачи материала — дикция, интонация, грамотность речи.<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">2.</span>&nbsp;Качество озвучки разных персонажей.<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">3.</span>&nbsp;Техническая реализация (отсутствие посторонних шумов).<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">4.</span>&nbsp;Подбор музыкального сопровождения текста.<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">5.</span>&nbsp;Оригинальность и убедительность повествования персонажей.<br></p>
+        <div class="nom-page-box-container">
+            <div class="nom-page-box">
+                <div class="rslide-text container animated nom-page-main-box">
+                    <h1 class="nom-page-title-box">Требования для публикации работы:</h1>
+                    <p class="nom-page-text-box"><span style="color: var(--teal);font-weight: bold;font-size: 30px;">1.</span>&nbsp;Выбрать только один из предложенных текстов.<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">2.</span>&nbsp;Отправить аудио дорожку в формате .wav или .mp3.<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">3.</span>&nbsp;Озвучивать может только один человек.<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">4.</span>&nbsp;Запрещено использовать программы для изменения голоса.<br></p>
+                </div>
+            </div>
+        </div>
+        <div class="nom-page-box-container">
+            <div class="nom-page-box" style="margin-bottom: 100px;">
+                <div class="rslide-text container animated nom-page-main-box">
+                    <h1 class="nom-page-title-box">Критерии оценки работы:</h1>
+                    <p class="nom-page-text-box"><span style="color: var(--teal);font-weight: bold;font-size: 30px;">1.</span>&nbsp;Мастерство голосовой подачи материала — дикция, интонация, грамотность речи.<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">2.</span>&nbsp;Качество озвучки разных персонажей.<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">3.</span>&nbsp;Техническая реализация (отсутствие посторонних шумов).<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">4.</span>&nbsp;Подбор музыкального сопровождения текста.<br><span style="color: var(--teal);font-weight: bold;font-size: 30px;">5.</span>&nbsp;Оригинальность и убедительность повествования персонажей.<br></p>
+                </div>
             </div>
         </div>
     </div>

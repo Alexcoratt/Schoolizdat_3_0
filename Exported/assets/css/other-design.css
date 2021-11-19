@@ -36,6 +36,16 @@
   color: #000000;
 }
 
+.navbar-col.season-theme {
+  height: initial;
+}
+
+@media (max-width: 532px) {
+  .navbar-col.season-theme {
+    display: none;
+  }
+}
+
 .rslide-heading {
   color: #000000;
 }
