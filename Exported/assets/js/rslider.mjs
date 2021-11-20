@@ -20,7 +20,7 @@ var rSlider = new RSlider(document.getElementsByClassName("rslider")[0], documen
 rSlider.slideTo(rSlider.getCurrentSlideNum());
 checkWidth();
 
-var fbSlider = new CycledHatSlider(document.getElementsByClassName("fb-slider")[0], 700);
+var fbSlider = new CycledHatSlider(document.getElementsByClassName("fb-slider")[0], "fb-paragraph", 700);
 fbSlider.calculateParams();
 
 $("#prev-button").click(getListener(fbSlider.slidePrevious, fbSlider));

@@ -18,7 +18,8 @@
 
 <body style="background-color: var(--main);">
     <div id="navbar" class="navbar" style="background-color: initial;">
-        <div style="width: 100%;display: flex;justify-content: flex-end;padding-right: 48px;height: 50px;align-items: center;">
+        <div class="col navbar-col"><a class="logo-link main" href="../index.html"></a></div>
+        <div class="col navbar-col">
             <div id="menu-link-open" class="burger-icon">
                 <div class="burger-line top"></div>
                 <div class="burger-line middle"></div>
@@ -59,10 +60,10 @@
     </div>
     <div class="page-view">
         <div class="rslider">
-            <div id="main-slide" class="rslide">
-                <div class="rslide-inner" style="width: 100%;background: linear-gradient(rgba(0,0,0,0.34), rgba(255,255,255,0) 56%);">
+            <div id="main-slide" class="rslide" style="background: linear-gradient(rgba(0,0,0,0.34), rgba(255,255,255,0) 56%);">
+                <div class="rslide-inner" style="background-image: url(&quot;assets/img/Background/BG_lines_1.svg&quot;);background-position: center;background-repeat: no-repeat;background-size: contain;">
                     <div class="rslide-content">
-                        <div class="container" style="text-align: center;margin-bottom: 96px;"><img src="assets/img/Logo_SI.svg" style="width: 400px;"></div>
+                        <div class="main-logo-container container"><img src="assets/img/Logo_SI.svg" style="width: 40%;"></div>
                         <div class="rslide-text container animated" style="text-align: center;max-width: 72%;">
                             <p class="text-left" style="font-size: 20px;"><strong>Скулиздат</strong>&nbsp;- образовательный проект, развивающий творческие способности, креативное мышление и командную работу среди старшеклассников школ. Победители конкурса получают дополнительные баллы при поступлении в&nbsp;<span style="color: var(--accent);">Санкт-Петербургский государственный университет промышленных технологий и дизайна</span>&nbsp;и&nbsp;<span style="color: var(--accent);">Высшей школы печати и медиатехнологий</span>.</p>
                         </div>
@@ -71,16 +72,16 @@
             </div>
             <div id="season-theme" class="rslide">
                 <div class="rslide-header">
-                    <h1 class="rslide-heading">Тема сезона</h1>
                     <h1 class="display-2 text-uppercase text-center d-xl-flex justify-content-xl-center align-items-xl-center backheading" style="font-family: Montserrat, sans-serif;">Т Е М А&nbsp; &nbsp;С Е З О Н А</h1>
+                    <h1 class="rslide-heading">Тема сезона</h1>
                 </div>
-                <div class="rslide-inner" style="justify-content: normal;background-image: url(&quot;assets/img/Background/BG_lines_2.svg&quot;);background-repeat: no-repeat;background-position: center;background-size: contain;">
-                    <div class="rslide-content" style="margin-left: 15%;margin-top: 75px;">
+                <div class="rslide-inner" style="background-image: url(&quot;assets/img/Background/BG_lines_2.svg&quot;);background-repeat: no-repeat;background-position: center;background-size: contain;">
+                    <div class="rslide-content" style="margin: 33px;margin-top: 75px;">
                         <div class="container">
-                            <h1 style="text-shadow: 0px 2px 10px rgba(52,58,64,0.61);margin-bottom: 44px;font-size: 60px;font-weight: bold;">СОЦИАЛЬНАЯ<br>МОБИЛЬНОСТЬ</h1>
+                            <h1 class="season-theme-heading">СОЦИАЛЬНАЯ<br>МОБИЛЬНОСТЬ</h1>
                         </div>
                         <div class="rslide-text container animated" style="font-size: 18px;">
-                            <p style="text-align: left;width: 600px;margin-bottom: 50px;">Кто я сегодня? Какой мой статус?<br>Так ли важен один миллион подписчиков в социальной сети?<br>Можно ли найти достойную работу в своём родном городе или нужно перебираться в мeгаполис?<br>Какие навыки сейчас необходимы, чтобы быть успешным в жизни и социуме?<br><br>Тебе не всё равно? Давай вместе подумаем об этом и<br>порассуждаем!<br></p><button class="btn btn-primary" id="to-nominations-button" type="button">Перейти к номинациям</button>
+                            <p style="text-align: left;margin-bottom: 50px;">Кто я сегодня? Какой мой статус?<br>Так ли важен один миллион подписчиков в социальной сети?<br>Можно ли найти достойную работу в своём родном городе или нужно перебираться в мeгаполис?<br>Какие навыки сейчас необходимы, чтобы быть успешным в жизни и социуме?<br><br>Тебе не всё равно? Давай вместе подумаем об этом и<br>порассуждаем!<br></p><button class="btn btn-primary" id="to-nominations-button" type="button">Перейти к номинациям</button>
                         </div>
                     </div>
                 </div>
@@ -163,14 +164,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="width: 100%;text-align: center;"><button class="btn btn-primary" id="all-news-button" type="button">Все новости</button></div>
+                        <div style="width: 100%;display: flex;justify-content: center;"><a id="all-news-button" href="Menu/news.html">Все новости</a></div>
                     </div>
                 </div>
             </div>
             <div id="nominations" class="rslide" style="justify-content: center;">
                 <div class="rslide-header">
-                    <h1 class="rslide-heading">Номинации</h1>
                     <h1 class="display-2 text-uppercase text-center d-xl-flex justify-content-xl-center align-items-xl-center backheading">Н о м и н а ц и и</h1>
+                    <h1 class="rslide-heading">Номинации</h1>
                 </div>
                 <div class="rslide-inner">
                     <div class="rslide-content">
@@ -317,8 +318,8 @@
                     <h1 class="rslide-heading">Отзывы</h1>
                 </div>
                 <div class="rslide-inner">
-                    <div style="width: 100%;overflow: hidden;">
-                        <div class="fb-slider" style="height: 550px;display: flex;align-items: flex-end;">
+                    <div style="width: 100%;overflow: hidden;height: initial;">
+                        <div class="fb-slider" style="height: initial;display: flex;align-items: center;">
                             <div class="fb-single-box">
                                 <div class="fb-single-box-inner">
                                     <div class="fb-element fb-header">
@@ -332,7 +333,7 @@
                                     </div>
                                     <div class="fb-element fb-content">
                                         <div class="fb-content-inner">
-                                            <p>«...Если суммировать, для меня скулиздат — это бесконечно качественный интенсив для ребят, которые готовы с нуля окунуться в мир журналистики и за пару дней создать свой собственный продукт. Даже если ничего не понимаешь. Даже если не успеваешь. Даже если сначала максимально лень.<br><br>Особую дань уважения хочется выразить руководству лагеря и, безусловно, кураторам, которые 24/7, жертвуя едой, сном, отдыхом и своими нервами, следили за нами. Не делая работу за нас, они создавали атмосферу, в которой самим хотелось работать, когда, казалось бы, редакция в тупике».<br></p>
+                                            <p class="fb-paragraph">«...Если суммировать, для меня скулиздат — это бесконечно качественный интенсив для ребят, которые готовы с нуля окунуться в мир журналистики и за пару дней создать свой собственный продукт. Даже если ничего не понимаешь. Даже если не успеваешь. Даже если сначала максимально лень.<br><br>Особую дань уважения хочется выразить руководству лагеря и, безусловно, кураторам, которые 24/7, жертвуя едой, сном, отдыхом и своими нервами, следили за нами. Не делая работу за нас, они создавали атмосферу, в которой самим хотелось работать, когда, казалось бы, редакция в тупике».<br></p>
                                         </div>
                                     </div>
                                 </div>
@@ -350,7 +351,7 @@
                                     </div>
                                     <div class="fb-element fb-content">
                                         <div class="fb-content-inner">
-                                            <p>«На скулиздат я попала благодаря нашему школьному изданию и своим стараниям. Конкурс был невероятно полезен, конечно мы были погружены и в некий азарт соперничества. Это были правда яркие эмоции и куча новых классных друзей. Знания приобритеные на скулиздате пригодились больше всего: как написать то что понравится людям и уложиться в дедлайн. Благодаря ему я приобрела невероятно творческих друзей, с которыми общаюсь и до сих пор, это мне и помогает оставаться в сфере медиа, журналистики».<br></p>
+                                            <p class="fb-paragraph">«На скулиздат я попала благодаря нашему школьному изданию и своим стараниям. Конкурс был невероятно полезен, конечно мы были погружены и в некий азарт соперничества. Это были правда яркие эмоции и куча новых классных друзей. Знания приобритеные на скулиздате пригодились больше всего: как написать то что понравится людям и уложиться в дедлайн. Благодаря ему я приобрела невероятно творческих друзей, с которыми общаюсь и до сих пор, это мне и помогает оставаться в сфере медиа, журналистики».<br></p>
                                         </div>
                                     </div>
                                 </div>
@@ -368,7 +369,7 @@
                                     </div>
                                     <div class="fb-element fb-content">
                                         <div class="fb-content-inner">
-                                            <p>«Я студент СПГУПТД, учусь в Высшей школе печати и медиа технологий на факультете журналистики. Несколько лет назад участвовал в конкурсе Schoolizdat, стал призёром. Для меня эта победа стала хорошей мотивацией бросить физикоматематический класс и начать готовиться к поступлению на журфак. Отчасти, Schoolizdat определил моё будущее, за это ему огромное спасибо.<br>О самом конкурсе рассказать могу много хорошего, но дам наставление - ЕСЛИ ТЫ ЕЩЕ НЕ УЧАСТВОВАЛ, &nbsp;СТОИТ ИСПРАВИТЬ ЭТО!».<br></p>
+                                            <p class="fb-paragraph">«Я студент СПГУПТД, учусь в Высшей школе печати и медиа технологий на факультете журналистики. Несколько лет назад участвовал в конкурсе Schoolizdat, стал призёром. Для меня эта победа стала хорошей мотивацией бросить физикоматематический класс и начать готовиться к поступлению на журфак. Отчасти, Schoolizdat определил моё будущее, за это ему огромное спасибо.<br>О самом конкурсе рассказать могу много хорошего, но дам наставление - ЕСЛИ ТЫ ЕЩЕ НЕ УЧАСТВОВАЛ, &nbsp;СТОИТ ИСПРАВИТЬ ЭТО!».<br></p>
                                         </div>
                                     </div>
                                 </div>
@@ -386,7 +387,7 @@
                                     </div>
                                     <div class="fb-element fb-content">
                                         <div class="fb-content-inner">
-                                            <p>«Я студент второго курса Политехнического университета им.Петра Великого.&nbsp; Обучаюсь на экономическом направлении. Журналистика для меня скорее хобби, а не профессия.<br>&nbsp; &nbsp;<br>Однако знания, полученные на Schoolizdat, помогают мне в организации вузовских мероприятий разной тематики, а также в проведении авторского курса по деловым переговорам, основы которого взяты из журналистики, за что благороден организаторам и участникам конкурса.»<br></p>
+                                            <p class="fb-paragraph">«Я студент второго курса Политехнического университета им.Петра Великого.&nbsp; Обучаюсь на экономическом направлении. Журналистика для меня скорее хобби, а не профессия.<br>&nbsp; &nbsp;<br>Однако знания, полученные на Schoolizdat, помогают мне в организации вузовских мероприятий разной тематики, а также в проведении авторского курса по деловым переговорам, основы которого взяты из журналистики, за что благороден организаторам и участникам конкурса.»<br></p>
                                         </div>
                                     </div>
                                 </div>
@@ -404,13 +405,13 @@
                                     </div>
                                     <div class="fb-element fb-content">
                                         <div class="fb-content-inner">
-                                            <p>«Я студент Высшей школы печати и медиатехнологий. Бывший участник и победитель конкурса Schoolizdat, а также один из кураторов прошлых лет.<br><br>Хочу выразить огромную благодарность организаторам и участникам конкурса. Благодаря Schoolizdat я улучшил свои профессиональные навыки, узнал много нового из сферы журналистики, выработал в себе много новых полезных качеств, а также обрёл много хороших и верных друзей».<br></p>
+                                            <p class="fb-paragraph">«Я студент Высшей школы печати и медиатехнологий. Бывший участник и победитель конкурса Schoolizdat, а также один из кураторов прошлых лет.<br><br>Хочу выразить огромную благодарность организаторам и участникам конкурса. Благодаря Schoolizdat я улучшил свои профессиональные навыки, узнал много нового из сферы журналистики, выработал в себе много новых полезных качеств, а также обрёл много хороших и верных друзей».<br></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div style="display: flex;height: 65px;justify-content: center;margin-top: 50px;position: relative;bottom: 8px;"><button class="btn btn-primary news-button" id="prev-button" type="button"><i class="fa fa-angle-left d-xl-flex justify-content-xl-center align-items-xl-center" style="transform: scale(1.76);"></i></button><button class="btn btn-primary news-button" id="next-button" type="button"><i class="fa fa-angle-right d-xl-flex justify-content-xl-center align-items-xl-center" style="transform: scale(1.76);"></i></button></div>
+                        <div style="display: flex;height: 65px;justify-content: center;/*margin-top: 50px;*//*position: relative;*/bottom: 8px;"><button class="btn btn-primary news-button" id="prev-button" type="button"><i class="fa fa-angle-left d-xl-flex justify-content-xl-center align-items-xl-center" style="transform: scale(1.76);"></i></button><button class="btn btn-primary news-button" id="next-button" type="button"><i class="fa fa-angle-right d-xl-flex justify-content-xl-center align-items-xl-center" style="transform: scale(1.76);"></i></button></div>
                     </div>
                 </div>
             </div>

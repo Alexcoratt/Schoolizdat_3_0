@@ -268,13 +268,39 @@ class SlideButton{      // не является эффективным ввид
 
 class HatItem{
     
-    constructor(node){
+    constructor(node, textBoxClassName){
         this.node = node;
         this.isCurrent = this.node.classList.contains("active");
+        this.textBoxClassName = textBoxClassName;
+        this.fullText = this.getText();
+        this.setText(this.splitText(this.fullText));
     }
     
     getClone(){
         return new HatItem(this.node.cloneNode(true));
+    }
+        
+    getText(){
+        return this.node.getElementsByClassName(this.textBoxClassName)[0].innerHTML;
+    }
+    
+    getFullText(){
+        return this.fullText;
+    }
+    
+    splitText(text, reqLen=128){  // обезает текст до указанной длины для укороченного представления новости
+        var len = text.length;
+        if (len > reqLen){
+            len = reqLen;
+            while (text[len] != " ")
+                len--;
+            return text.slice(0, len) + "...";
+        }
+        return text
+    }
+    
+    setText(text){
+        this.node.getElementsByClassName(this.textBoxClassName)[0].innerHTML = text;
     }
     
     activate(){
@@ -333,12 +359,12 @@ class HatItem{
 }
 
 class HatSlider{
-    constructor(node, duration=1000){
+    constructor(node, textBoxClassName, duration=1000){
         this.node = node;
         this.items = Array.from(this.node.children);
         this.duration = duration;
         for (var i = 0; i < this.items.length; i++){
-            this.items[i] = new HatItem(this.items[i]);
+            this.items[i] = new HatItem(this.items[i], textBoxClassName);
             this.items[i].setDuration(this.duration);
             this.items[i].setPosition(this.getItemPos());
             //this.items[i].node.innerHTML = "<h1 style=\"position:absolute\">" + i + "</h1>" + this.items[i].node.innerHTML;    // нумерация для отладки
