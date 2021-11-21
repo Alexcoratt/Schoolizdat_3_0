@@ -39,3 +39,22 @@
   box-shadow: #000000 0 0 4px;
 }
 
+.spisok {
+  justify-content: center;
+  display: flex;
+  width: 80%;
+  padding: 30px;
+  border-radius: 20px;
+  border-style: none;
+  color: #ffffff;
+  font-size: 24px;
+  background: var(--additional);
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+.spisok:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+
