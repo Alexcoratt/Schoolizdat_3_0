@@ -28,9 +28,9 @@
         </div>
         <div id="menu-tile" class="menu-tile">
             <div class="menu-block" style="top: 6em;">
-                <div class="menu-link-box"><a class="navlink" href="Menu/news.html">Новости</a></div>
+                <div class="menu-link-box"><a class="navlink" href="news/index.html">Новости</a></div>
                 <div class="menu-link-box"><a class="navlink" href="assets/documents/Polozhenie_contest_2021.pdf" target="_blank">Конкурс</a></div>
-                <div class="menu-link-box"><a class="navlink" href="Nominations/massMedia.html">Номинации</a></div>
+                <div class="menu-link-box"><a class="navlink" href="nominacii/massMedia.html">Номинации</a></div>
                 <div class="menu-link-box"><a class="navlink" href="assets/documents/Polozhenie_olimpiada_2021.pdf" target="_blank">Олимпиада</a></div>
                 <div class="menu-link-box" style="margin-top: 30px;"><a class="navlink unclickable">Команда</a></div>
                 <div class="menu-link-box"><a class="navlink" href="Menu/documents.html">Документы</a></div>
@@ -97,6 +97,32 @@
                 <div class="rslide-inner">
                     <div class="container">
                         <div class="row news-row">
+                            <!--@foreach($news as $item)-->
+                            <div class="col news-column">
+                                <div class="news-single-box">
+                                    <div style="display: flex;justify-content: center;">
+                                        <div class="news-tile">
+                                            <div class="news-image" style="background-image: url('/images/{{$item['image']}}')"></div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex;justify-content: center;">
+                                        <div class="news-content-box">
+                                            <h3 class="news-box-heading">{{$item['title']}}<br></h3>
+                                            <p>{!! $item['summary'] !!}<br></p>
+                                            <div class="news-info-bar">
+                                                <div class="news-views-count"><i class="fa fa-eye"></i>
+                                                    <p class="views-count">{{$item['views']}}</p>
+                                                </div><a class="news-more-button" href="/news/{{$item['id']}}"><i class="fa fa-angle-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="news-frame-box">
+                                    <div class="news-frame"></div>
+                                </div>
+                            </div>
+                            <!--@endforeach
+@if(false)-->
                             <div class="col news-column">
                                 <div class="news-single-box">
                                     <div style="display: flex;justify-content: center;">
@@ -106,8 +132,8 @@
                                     </div>
                                     <div style="display: flex;justify-content: center;">
                                         <div class="news-content-box">
-                                            <h3 class="news-box-heading">Поздравляем!<br></h3>
-                                            <p><br>Дорогие друзья!<br><br>Поздравляем вас с началом нового учебного года.<br>С первым сентября!<br>Желаем вам успехов в новом учебном году. Пусть учеба будет яркой и интересной<br><br></p>
+                                            <h3 class="news-box-heading">Heading</h3>
+                                            <p>Paragraph</p>
                                             <div class="news-info-bar">
                                                 <div class="news-views-count"><i class="fa fa-eye"></i>
                                                     <p class="views-count">555</p>
@@ -143,31 +169,9 @@
                                     <div class="news-frame"></div>
                                 </div>
                             </div>
-                            <div class="col news-column">
-                                <div class="news-single-box">
-                                    <div style="display: flex;justify-content: center;">
-                                        <div class="news-tile">
-                                            <div class="news-image"></div>
-                                        </div>
-                                    </div>
-                                    <div style="display: flex;justify-content: center;">
-                                        <div class="news-content-box">
-                                            <h3 class="news-box-heading">Heading</h3>
-                                            <p>Paragraph</p>
-                                            <div class="news-info-bar">
-                                                <div class="news-views-count"><i class="fa fa-eye"></i>
-                                                    <p class="views-count">555</p>
-                                                </div><a class="news-more-button" href="#"><i class="fa fa-angle-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="news-frame-box">
-                                    <div class="news-frame"></div>
-                                </div>
-                            </div>
+                            <!--@endif-->
                         </div>
-                        <div style="width: 100%;display: flex;justify-content: center;margin-top: 12px;height: initial;"><a id="all-news-button" href="Menu/news.html">Все новости</a></div>
+                        <div style="width: 100%;display: flex;justify-content: center;margin-top: 12px;height: initial;"><a id="all-news-button" href="news">Все новости</a></div>
                     </div>
                 </div>
             </div>
@@ -179,7 +183,7 @@
                 <div class="rslide-inner">
                     <div class="rslide-content" style="display: flex;max-width: 710px;flex-wrap: wrap;justify-content: space-around;padding-left: 2px;padding-right: 2px;">
                         <div class="nomination-single-box">
-                            <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/massMedia.html">
+                            <div class="nomination-box-tile"><a class="nomination-link" href="nominacii/massMedia.html">
                                     <div class="nomination-box">
                                         <div class="nomination-icon-box">
                                             <div class="nomination-icon-frame">
@@ -193,7 +197,7 @@
                                 </a></div>
                         </div>
                         <div class="nomination-single-box">
-                            <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/videoReport.html">
+                            <div class="nomination-box-tile"><a class="nomination-link" href="nominacii/videoReport.html">
                                     <div class="nomination-box">
                                         <div class="nomination-icon-box">
                                             <div class="nomination-icon-frame">
@@ -207,7 +211,7 @@
                                 </a></div>
                         </div>
                         <div class="nomination-single-box">
-                            <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/journalism.html">
+                            <div class="nomination-box-tile"><a class="nomination-link" href="nominacii/journalism.html">
                                     <div class="nomination-box">
                                         <div class="nomination-icon-box">
                                             <div class="nomination-icon-frame">
@@ -221,7 +225,7 @@
                                 </a></div>
                         </div>
                         <div class="nomination-single-box">
-                            <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/crystalFeather.html">
+                            <div class="nomination-box-tile"><a class="nomination-link" href="nominacii/crystalFeather.html">
                                     <div class="nomination-box">
                                         <div class="nomination-icon-box">
                                             <div class="nomination-icon-frame">
@@ -235,7 +239,7 @@
                                 </a></div>
                         </div>
                         <div class="nomination-single-box">
-                            <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/sticker.html">
+                            <div class="nomination-box-tile"><a class="nomination-link" href="nominacii/sticker.html">
                                     <div class="nomination-box">
                                         <div class="nomination-icon-box">
                                             <div class="nomination-icon-frame">
@@ -249,7 +253,7 @@
                                 </a></div>
                         </div>
                         <div class="nomination-single-box">
-                            <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/singleDesign.html">
+                            <div class="nomination-box-tile"><a class="nomination-link" href="nominacii/singleDesign.html">
                                     <div class="nomination-box">
                                         <div class="nomination-icon-box">
                                             <div class="nomination-icon-frame">
@@ -263,7 +267,7 @@
                                 </a></div>
                         </div>
                         <div class="nomination-single-box">
-                            <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/voiceActing.html">
+                            <div class="nomination-box-tile"><a class="nomination-link" href="nominacii/voiceActing.html">
                                     <div class="nomination-box">
                                         <div class="nomination-icon-box">
                                             <div class="nomination-icon-frame">
@@ -277,7 +281,7 @@
                                 </a></div>
                         </div>
                         <div class="nomination-single-box">
-                            <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/authorsPhoto.html">
+                            <div class="nomination-box-tile"><a class="nomination-link" href="nominacii/authorsPhoto.html">
                                     <div class="nomination-box">
                                         <div class="nomination-icon-box">
                                             <div class="nomination-icon-frame">
