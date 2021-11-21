@@ -479,13 +479,14 @@ h1, h2, h3, h4, h5, h6, p {
 
 .news-frame {
   height: 192px;
-  width: 91%;
+  width: 83%;
   border-style: solid;
   border-radius: 15px;
   border-color: #ffffff;
-  margin-top: 12px;
-  margin-right: 3px;
   transition-duration: .5s;
+  position: relative;
+  right: 13px;
+  top: 5px;
 }
 
 .news-box-heading {
@@ -537,6 +538,8 @@ h1, h2, h3, h4, h5, h6, p {
   height: 100%;
   width: 100%;
   margin: 0;
+  right: 0;
+  top: 0;
 }
 
 .news-single-box {
@@ -871,6 +874,10 @@ h1, h2, h3, h4, h5, h6, p {
   border-radius: 16px;
   border-style: none;
   transition-duration: .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 
 #to-nominations-button:hover {
