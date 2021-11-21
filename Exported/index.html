@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="assets/css/rslide-header-index.css">
 </head>
 
-<body style="background-color: var(--main);">
+<body style="background-color: var(--main);"><x-navbar></x-navbar>
+<!--@if(false)-->
     <div id="navbar" class="navbar main" style="background-color: initial;">
         <div class="col navbar-col"><a class="logo-link main" href="../index.html"></a></div>
         <div class="col navbar-col">
@@ -51,7 +52,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div><!--@endif-->
     <div class="col rslider-pagination-column" id="pagination">
         <ul class="list-unstyled rslider-pagination">
             <li class="rslider-indicator active" title="page1" data-menuanchor="main-slide1"><a href="#main-slide1"></a></li>
@@ -64,11 +65,11 @@
     <div class="page-view">
         <div id="fullpage" class="rslider">
             <div id="main-slide" class="rslide section" style="background: var(--main) linear-gradient(rgba(0,0,0,0.34), rgba(255,255,255,0) 56%);">
-                <div class="rslide-inner main" style="background-image: url(&quot;assets/img/Background/BG_lines_1.svg&quot;);background-position: center;background-repeat: no-repeat;background-size: contain;">
+                <div class="rslide-inner main" style="background-image: url(&quot;assets/img/Background/BG_lines_1.svg&quot;);background-position: center;background-repeat: no-repeat;background-size: 115vw;">
                     <div class="rslide-content">
                         <div class="main-logo-container container"><img src="assets/img/Logo_SI.svg" style="width: 40%;"></div>
                         <div class="rslide-text container animated" style="text-align: center;max-width: 72%;">
-                            <p class="text-left" style="font-size: 20px;"><strong>Скулиздат</strong>&nbsp;- образовательный проект, развивающий творческие способности, креативное мышление и командную работу среди старшеклассников школ. Победители конкурса получают дополнительные баллы при поступлении в&nbsp;<span style="color: var(--accent);">Санкт-Петербургский государственный университет промышленных технологий и дизайна</span>&nbsp;и&nbsp;<span style="color: var(--accent);">Высшей школы печати и медиатехнологий</span>.</p>
+                            <p class="text-left" style="font-size: 20px;"><strong>Скулиздат</strong>&nbsp;- образовательный проект, развивающий творческие способности, креативное мышление и командную работу молодежи.</p>
                         </div>
                     </div>
                 </div>
@@ -78,7 +79,7 @@
                     <h1 class="display-2 text-uppercase text-center d-xl-flex justify-content-xl-center align-items-xl-center backheading" style="font-family: Montserrat, sans-serif;">Т Е М А&nbsp; &nbsp;С Е З О Н А</h1>
                     <h1 class="rslide-heading">Тема сезона</h1>
                 </div>
-                <div class="rslide-inner" style="background-image: url(&quot;assets/img/Background/BG_lines_2.svg&quot;);background-repeat: no-repeat;background-position: center;background-size: contain;justify-content: flex-start;padding-left: 71px;">
+                <div class="rslide-inner" style="justify-content: flex-start;padding-left: 71px;">
                     <div class="rslide-content">
                         <div class="container">
                             <h1 class="season-theme-heading">МИФ<br>В СОВРЕМЕННОЙ ЖИЗНИ</h1>
@@ -312,7 +313,7 @@
                                             <div class="fb-header-image" style="background-image: url(&quot;assets/img/Avatar/0.png&quot;);"></div>
                                             <div class="fb-name-tile">
                                                 <h5 class="fb-title">Призёр олимпиады "Хрустальное перо"<br></h5>
-                                                <h3 class="fb-name">ЧЕРНАЦКАЯ ЕКАТЕРИНА<br></h3>
+                                                <h3 class="fb-name">Екатерина ЧЕРНАЦКАЯ<br></h3>
                                             </div>
                                         </div>
                                     </div>
@@ -330,7 +331,7 @@
                                             <div class="fb-header-image" style="background-image: url(&quot;assets/img/Avatar/3.png&quot;);"></div>
                                             <div class="fb-name-tile">
                                                 <h5 class="fb-title">Участник Скулиздата<br></h5>
-                                                <h3 class="fb-name">Шульц Лина<br></h3>
+                                                <h3 class="fb-name">лина Шульц<br></h3>
                                             </div>
                                         </div>
                                     </div>
@@ -348,7 +349,7 @@
                                             <div class="fb-header-image" style="background-image: url(&quot;assets/img/Avatar/4.png&quot;);"></div>
                                             <div class="fb-name-tile">
                                                 <h5 class="fb-title">Участник Скулиздата<br></h5>
-                                                <h3 class="fb-name">Прокопович Матвей<br></h3>
+                                                <h3 class="fb-name">матвей Прокопович<br></h3>
                                             </div>
                                         </div>
                                     </div>
@@ -369,15 +370,16 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/_horisontal_sliders_lib.js"></script>
+    <script src="assets/js/_rslider_lib.js"></script>
     <script src="assets/js/fullpage..scrolloverflow.min.js"></script>
     <script src="assets/js/fullpage.min.js"></script>
     <script src="assets/js/fullpage.use.js"></script>
-    <script src="assets/js/horisontal_sliders_lib.js"></script>
     <script src="assets/js/jquery-ui.js"></script>
     <script src="assets/js/menu_tile_toggler.js"></script>
     <script src="assets/js/news_box_anim.js"></script>
     <script src="assets/js/nom_tile_anim.js"></script>
-    <script src="assets/js/rslider.mjs" type="module"></script>
+    <script src="assets/js/rslider.js"></script>
 </body>
 
 </html>
