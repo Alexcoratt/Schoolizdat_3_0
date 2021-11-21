@@ -33,3 +33,8 @@
   color: #000000;
 }
 
+.text-row {
+  display: flex;
+  justify-content: space-between;
+}
+
