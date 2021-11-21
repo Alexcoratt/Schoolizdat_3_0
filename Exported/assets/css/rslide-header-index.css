@@ -1,7 +1,4 @@
-@media (min-width: 786px) {
-  .rslide-header {
-    position: absolute;
-    margin-top: 0;
-  }
+.rslide-header {
+  margin-top: 0;
 }
 

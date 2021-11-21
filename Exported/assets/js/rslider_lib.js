@@ -148,6 +148,7 @@ class RSlider{
     }   // доводка слайда
     
     slideTo(num, self=this, ignoreOff=false){    // ВНИМАНИЕ! slideTo привязан к id слайда на странице, то есть он не сможет перейти к слайду, id которого не указан
+        num = num % self.slides.length;
         if (self.isOn || ignoreOff){
             self.isScrolling = true;
             self.slides.forEach(function(slide){slide.deactivate();});

@@ -17,6 +17,12 @@ class NewsSingleBox extends SingleBox{
     bindButton(articleSlider, slideNum){
         $(this.articleButton).click(function(){
             articleSlider.slideTo(slideNum);
+            $("html, body").animate({
+                scrollTop: 0,
+            }, {
+                duration: 500,
+                easing: "swing"
+            });
         });
     }
 }
@@ -97,7 +103,7 @@ class NewsCarousel extends Feed{
 class ArticleItem extends HatItem{
 
     constructor(node){
-        super(node);
+        super(node, "article-paragraph");
         this.imageNode = this.node.getElementsByClassName("article-image")[0];
         this.headingNode = this.node.getElementsByClassName("article-heading")[0];
         this.paragraphNode = this.node.getElementsByClassName("article-paragraph")[0];
@@ -136,7 +142,7 @@ class ArticleItem extends HatItem{
 class ArticleSlider extends HatSlider{
 
     constructor(node, duration=1000){
-        super(node, duration);
+        super(node, "article-paragraph", duration);
         for (var i = 0; i < this.items.length; i++){
             this.items[i] = new ArticleItem(this.items[i].node);
             this.items[i].setDuration(this.duration);
@@ -164,6 +170,12 @@ class ArticleSlider extends HatSlider{
     
     unready(){
         $(this.node).removeClass("ready");
+    }
+    
+    addItem(item){
+        if (item == undefined)
+            item = this.items[this.getLength() - 1].getClone();
+        return super.addItem(item);
     }
     
     slideTo(num, self=this, noDuration=false){

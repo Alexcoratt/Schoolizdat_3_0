@@ -17,7 +17,7 @@
 </head>
 
 <body style="background-color: var(--main);">
-    <div id="navbar" class="navbar" style="background-color: initial;">
+    <div id="navbar" class="navbar main" style="background-color: initial;">
         <div class="col navbar-col"><a class="logo-link main" href="../index.html"></a></div>
         <div class="col navbar-col">
             <div id="menu-link-open" class="burger-icon">
@@ -54,14 +54,17 @@
     </div>
     <div class="col rslider-pagination-column" id="pagination">
         <ul class="list-unstyled rslider-pagination">
-            <li class="rslider-indicator active" title="page1"></li>
-            <li class="rslider-indicator" title="page1"></li>
+            <li class="rslider-indicator active" title="page1" data-menuanchor="main-slide1"><a href="#main-slide1"></a></li>
+            <li class="rslider-indicator" title="page1" data-menuanchor="season-theme1"><a href="#season-theme1"></a></li>
+            <li class="rslider-indicator" title="page1" data-menuanchor="news1"><a href="#news1"></a></li>
+            <li class="rslider-indicator" title="page1" data-menuanchor="nominations1"><a href="#nominations1"></a></li>
+            <li class="rslider-indicator" title="page1" data-menuanchor="reviews1"><a href="#reviews1"></a></li>
         </ul>
     </div>
     <div class="page-view">
-        <div class="rslider">
-            <div id="main-slide" class="rslide" style="background: linear-gradient(rgba(0,0,0,0.34), rgba(255,255,255,0) 56%);">
-                <div class="rslide-inner" style="background-image: url(&quot;assets/img/Background/BG_lines_1.svg&quot;);background-position: center;background-repeat: no-repeat;background-size: contain;">
+        <div id="fullpage" class="rslider">
+            <div id="main-slide" class="rslide section" style="background: var(--main) linear-gradient(rgba(0,0,0,0.34), rgba(255,255,255,0) 56%);">
+                <div class="rslide-inner main" style="background-image: url(&quot;assets/img/Background/BG_lines_1.svg&quot;);background-position: center;background-repeat: no-repeat;background-size: contain;">
                     <div class="rslide-content">
                         <div class="main-logo-container container"><img src="assets/img/Logo_SI.svg" style="width: 40%;"></div>
                         <div class="rslide-text container animated" style="text-align: center;max-width: 72%;">
@@ -70,7 +73,7 @@
                     </div>
                 </div>
             </div>
-            <div id="season-theme" class="rslide">
+            <div id="season-theme" class="rslide section">
                 <div class="rslide-header">
                     <h1 class="display-2 text-uppercase text-center d-xl-flex justify-content-xl-center align-items-xl-center backheading" style="font-family: Montserrat, sans-serif;">Т Е М А&nbsp; &nbsp;С Е З О Н А</h1>
                     <h1 class="rslide-heading">Тема сезона</h1>
@@ -86,13 +89,13 @@
                     </div>
                 </div>
             </div>
-            <div id="news" class="rslide">
+            <div id="news" class="rslide section">
                 <div class="rslide-header">
                     <h1 class="display-2 text-uppercase text-center d-xl-flex justify-content-xl-center align-items-xl-center backheading">Н О В О С Т И</h1>
                     <h1 class="rslide-heading">Новости</h1>
                 </div>
                 <div class="rslide-inner">
-                    <div class="container" style="margin-top: 110px;">
+                    <div class="container">
                         <div class="row news-row">
                             <div class="col news-column">
                                 <div class="news-single-box">
@@ -103,8 +106,8 @@
                                     </div>
                                     <div style="display: flex;justify-content: center;">
                                         <div class="news-content-box">
-                                            <h3 class="news-box-heading">Heading</h3>
-                                            <p>Paragraph</p>
+                                            <h3 class="news-box-heading">Поздравляем!<br></h3>
+                                            <p><br>Дорогие друзья!<br><br>Поздравляем вас с началом нового учебного года.<br>С первым сентября!<br>Желаем вам успехов в новом учебном году. Пусть учеба будет яркой и интересной<br><br></p>
                                             <div class="news-info-bar">
                                                 <div class="news-views-count"><i class="fa fa-eye"></i>
                                                     <p class="views-count">555</p>
@@ -164,170 +167,148 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="width: 100%;display: flex;justify-content: center;"><a id="all-news-button" href="Menu/news.html">Все новости</a></div>
+                        <div style="width: 100%;display: flex;justify-content: center;margin-top: 12px;height: initial;"><a id="all-news-button" href="Menu/news.html">Все новости</a></div>
                     </div>
                 </div>
             </div>
-            <div id="nominations" class="rslide" style="justify-content: center;">
+            <div id="nominations" class="rslide section" style="justify-content: center;">
                 <div class="rslide-header">
                     <h1 class="display-2 text-uppercase text-center d-xl-flex justify-content-xl-center align-items-xl-center backheading">Н о м и н а ц и и</h1>
                     <h1 class="rslide-heading">Номинации</h1>
                 </div>
                 <div class="rslide-inner">
-                    <div class="rslide-content">
-                        <div class="row" style="justify-content: center;width: 100%;margin: 0;">
-                            <div class="col nominations-block">
-                                <div class="container nominations-container">
-                                    <div class="row nomination-row">
-                                        <div class="col nomination-col">
-                                            <div class="nomination-single-box">
-                                                <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/massMedia.html">
-                                                        <div class="nomination-box">
-                                                            <div class="nomination-icon-box">
-                                                                <div class="nomination-icon-frame">
-                                                                    <div class="nomination-image-box"><img class="nomination-image" src="assets/img/Nominations/Media.svg"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="nomination-name">
-                                                                <h6 class="nomination-heading">СМИ</h6>
-                                                            </div>
-                                                        </div>
-                                                    </a></div>
-                                            </div>
-                                            <div class="nomination-single-box">
-                                                <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/videoReport.html">
-                                                        <div class="nomination-box">
-                                                            <div class="nomination-icon-box">
-                                                                <div class="nomination-icon-frame">
-                                                                    <div class="nomination-image-box"><img class="nomination-image" src="assets/img/Nominations/Reportage.svg"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="nomination-name">
-                                                                <h6 class="nomination-heading">Видеорепортаж</h6>
-                                                            </div>
-                                                        </div>
-                                                    </a></div>
+                    <div class="rslide-content" style="display: flex;max-width: 710px;flex-wrap: wrap;justify-content: space-around;padding-left: 2px;padding-right: 2px;">
+                        <div class="nomination-single-box">
+                            <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/massMedia.html">
+                                    <div class="nomination-box">
+                                        <div class="nomination-icon-box">
+                                            <div class="nomination-icon-frame">
+                                                <div class="nomination-image-box"><img class="nomination-image" src="assets/img/Nominations/Media.svg"></div>
                                             </div>
                                         </div>
-                                        <div class="col nomination-col">
-                                            <div class="nomination-single-box">
-                                                <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/journalism.html">
-                                                        <div class="nomination-box">
-                                                            <div class="nomination-icon-box">
-                                                                <div class="nomination-icon-frame">
-                                                                    <div class="nomination-image-box"><img class="nomination-image" src="assets/img/Nominations/Journal.svg"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="nomination-name">
-                                                                <h6 class="nomination-heading">Жанры журналистики</h6>
-                                                            </div>
-                                                        </div>
-                                                    </a></div>
-                                            </div>
-                                            <div class="nomination-single-box">
-                                                <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/crystalFeather.html">
-                                                        <div class="nomination-box">
-                                                            <div class="nomination-icon-box">
-                                                                <div class="nomination-icon-frame">
-                                                                    <div class="nomination-image-box"><img class="nomination-image" src="assets/img/Nominations/Feather.svg"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="nomination-name">
-                                                                <h6 class="nomination-heading">Хрустальное<br>перо</h6>
-                                                            </div>
-                                                        </div>
-                                                    </a></div>
-                                            </div>
+                                        <div class="nomination-name">
+                                            <h6 class="nomination-heading">СМИ</h6>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col nominations-block">
-                                <div class="container nominations-container">
-                                    <div class="row nomination-row">
-                                        <div class="col nomination-col">
-                                            <div class="nomination-single-box">
-                                                <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/sticker.html">
-                                                        <div class="nomination-box">
-                                                            <div class="nomination-icon-box">
-                                                                <div class="nomination-icon-frame">
-                                                                    <div class="nomination-image-box"><img class="nomination-image" src="assets/img/Nominations/Sticker.svg"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="nomination-name">
-                                                                <h6 class="nomination-heading">Стикер</h6>
-                                                            </div>
-                                                        </div>
-                                                    </a></div>
-                                            </div>
-                                            <div class="nomination-single-box">
-                                                <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/singleDesign.html">
-                                                        <div class="nomination-box">
-                                                            <div class="nomination-icon-box">
-                                                                <div class="nomination-icon-frame">
-                                                                    <div class="nomination-image-box"><img class="nomination-image" src="assets/img/Nominations/Single.svg"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="nomination-name">
-                                                                <h6 class="nomination-heading">Дизайн<br>сингла</h6>
-                                                            </div>
-                                                        </div>
-                                                    </a></div>
+                                </a></div>
+                        </div>
+                        <div class="nomination-single-box">
+                            <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/videoReport.html">
+                                    <div class="nomination-box">
+                                        <div class="nomination-icon-box">
+                                            <div class="nomination-icon-frame">
+                                                <div class="nomination-image-box"><img class="nomination-image" src="assets/img/Nominations/Reportage.svg"></div>
                                             </div>
                                         </div>
-                                        <div class="col nomination-col">
-                                            <div class="nomination-single-box">
-                                                <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/voiceActing.html">
-                                                        <div class="nomination-box">
-                                                            <div class="nomination-icon-box">
-                                                                <div class="nomination-icon-frame">
-                                                                    <div class="nomination-image-box"><img class="nomination-image" src="assets/img/Nominations/Voice.svg"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="nomination-name">
-                                                                <h6 class="nomination-heading">Озвучка</h6>
-                                                            </div>
-                                                        </div>
-                                                    </a></div>
-                                            </div>
-                                            <div class="nomination-single-box">
-                                                <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/authorsPhoto.html">
-                                                        <div class="nomination-box">
-                                                            <div class="nomination-icon-box">
-                                                                <div class="nomination-icon-frame">
-                                                                    <div class="nomination-image-box"><img class="nomination-image" src="assets/img/Nominations/Photo.svg"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="nomination-name">
-                                                                <h6 class="nomination-heading">Фотография</h6>
-                                                            </div>
-                                                        </div>
-                                                    </a></div>
-                                            </div>
+                                        <div class="nomination-name">
+                                            <h6 class="nomination-heading">Видеорепортаж</h6>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+                                </a></div>
+                        </div>
+                        <div class="nomination-single-box">
+                            <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/journalism.html">
+                                    <div class="nomination-box">
+                                        <div class="nomination-icon-box">
+                                            <div class="nomination-icon-frame">
+                                                <div class="nomination-image-box"><img class="nomination-image" src="assets/img/Nominations/Journal.svg"></div>
+                                            </div>
+                                        </div>
+                                        <div class="nomination-name">
+                                            <h6 class="nomination-heading">Жанры журналистики</h6>
+                                        </div>
+                                    </div>
+                                </a></div>
+                        </div>
+                        <div class="nomination-single-box">
+                            <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/crystalFeather.html">
+                                    <div class="nomination-box">
+                                        <div class="nomination-icon-box">
+                                            <div class="nomination-icon-frame">
+                                                <div class="nomination-image-box"><img class="nomination-image" src="assets/img/Nominations/Feather.svg"></div>
+                                            </div>
+                                        </div>
+                                        <div class="nomination-name">
+                                            <h6 class="nomination-heading">Хрустальное<br>перо</h6>
+                                        </div>
+                                    </div>
+                                </a></div>
+                        </div>
+                        <div class="nomination-single-box">
+                            <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/sticker.html">
+                                    <div class="nomination-box">
+                                        <div class="nomination-icon-box">
+                                            <div class="nomination-icon-frame">
+                                                <div class="nomination-image-box"><img class="nomination-image" src="assets/img/Nominations/Sticker.svg"></div>
+                                            </div>
+                                        </div>
+                                        <div class="nomination-name">
+                                            <h6 class="nomination-heading">Стикер</h6>
+                                        </div>
+                                    </div>
+                                </a></div>
+                        </div>
+                        <div class="nomination-single-box">
+                            <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/singleDesign.html">
+                                    <div class="nomination-box">
+                                        <div class="nomination-icon-box">
+                                            <div class="nomination-icon-frame">
+                                                <div class="nomination-image-box"><img class="nomination-image" src="assets/img/Nominations/Single.svg"></div>
+                                            </div>
+                                        </div>
+                                        <div class="nomination-name">
+                                            <h6 class="nomination-heading">Дизайн<br>сингла</h6>
+                                        </div>
+                                    </div>
+                                </a></div>
+                        </div>
+                        <div class="nomination-single-box">
+                            <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/voiceActing.html">
+                                    <div class="nomination-box">
+                                        <div class="nomination-icon-box">
+                                            <div class="nomination-icon-frame">
+                                                <div class="nomination-image-box"><img class="nomination-image" src="assets/img/Nominations/Voice.svg"></div>
+                                            </div>
+                                        </div>
+                                        <div class="nomination-name">
+                                            <h6 class="nomination-heading">Озвучка</h6>
+                                        </div>
+                                    </div>
+                                </a></div>
+                        </div>
+                        <div class="nomination-single-box">
+                            <div class="nomination-box-tile"><a class="nomination-link" href="Nominations/authorsPhoto.html">
+                                    <div class="nomination-box">
+                                        <div class="nomination-icon-box">
+                                            <div class="nomination-icon-frame">
+                                                <div class="nomination-image-box"><img class="nomination-image" src="assets/img/Nominations/Photo.svg"></div>
+                                            </div>
+                                        </div>
+                                        <div class="nomination-name">
+                                            <h6 class="nomination-heading">Фотография</h6>
+                                        </div>
+                                    </div>
+                                </a></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="reviews" class="rslide">
+            <div id="reviews" class="rslide section">
                 <div class="rslide-header">
                     <h1 class="display-2 text-uppercase text-center d-xl-flex justify-content-xl-center align-items-xl-center backheading">О Т З Ы В Ы</h1>
                     <h1 class="rslide-heading">Отзывы</h1>
                 </div>
                 <div class="rslide-inner">
-                    <div style="width: 100%;overflow: hidden;height: initial;">
+                    <div style="overflow: hidden;">
                         <div class="fb-slider" style="height: initial;display: flex;align-items: center;">
                             <div class="fb-single-box">
                                 <div class="fb-single-box-inner">
                                     <div class="fb-element fb-header">
                                         <div class="fb-header-box">
-                                            <div class="fb-header-image" style="background: url(&quot;assets/img/Avatar/0.png&quot;);box-shadow: 5px -5px rgba(195,254,147,0.4);"></div>
+                                            <div class="fb-header-image" style="background-image: url(&quot;assets/img/Avatar/0.png&quot;);"></div>
                                             <div class="fb-name-tile">
-                                                <h5 class="fb-title" style="font-size: 15px;color: rgba(255,255,255,0.74);">Призёр олимпиады "Хрустальное перо"<br></h5>
-                                                <h3 class="fb-name" style="font-size: 30px;">ЧЕРНАЦКАЯ ЕКАТЕРИНА<br></h3>
+                                                <h5 class="fb-title">Призёр олимпиады "Хрустальное перо"<br></h5>
+                                                <h3 class="fb-name">ЧЕРНАЦКАЯ ЕКАТЕРИНА<br></h3>
                                             </div>
                                         </div>
                                     </div>
@@ -342,7 +323,7 @@
                                 <div class="fb-single-box-inner">
                                     <div class="fb-element fb-header">
                                         <div class="fb-header-box">
-                                            <div class="fb-header-image" style="background: url(&quot;assets/img/Avatar/3.png&quot;);"></div>
+                                            <div class="fb-header-image" style="background-image: url(&quot;assets/img/Avatar/3.png&quot;);"></div>
                                             <div class="fb-name-tile">
                                                 <h5 class="fb-title">Участник Скулиздата<br></h5>
                                                 <h3 class="fb-name">Шульц Лина<br></h3>
@@ -374,44 +355,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="fb-single-box">
-                                <div class="fb-single-box-inner">
-                                    <div class="fb-element fb-header">
-                                        <div class="fb-header-box">
-                                            <div class="fb-header-image" style="background-image: url(&quot;assets/img/Avatar/1.png&quot;);"></div>
-                                            <div class="fb-name-tile">
-                                                <h5 class="fb-title">Призёр конкурса "Хрустальное перо"<br></h5>
-                                                <h3 class="fb-name">Ускорников Илья<br></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="fb-element fb-content">
-                                        <div class="fb-content-inner">
-                                            <p class="fb-paragraph">«Я студент второго курса Политехнического университета им.Петра Великого.&nbsp; Обучаюсь на экономическом направлении. Журналистика для меня скорее хобби, а не профессия.<br>&nbsp; &nbsp;<br>Однако знания, полученные на Schoolizdat, помогают мне в организации вузовских мероприятий разной тематики, а также в проведении авторского курса по деловым переговорам, основы которого взяты из журналистики, за что благороден организаторам и участникам конкурса.»<br></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fb-single-box">
-                                <div class="fb-single-box-inner">
-                                    <div class="fb-element fb-header">
-                                        <div class="fb-header-box">
-                                            <div class="fb-header-image" style="background-image: url(&quot;assets/img/Avatar/2.png&quot;);"></div>
-                                            <div class="fb-name-tile">
-                                                <h5 class="fb-title">Победитель в номинации "Видеорепортаж"<br></h5>
-                                                <h3 class="fb-name">Ненашев Сергей<br></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="fb-element fb-content">
-                                        <div class="fb-content-inner">
-                                            <p class="fb-paragraph">«Я студент Высшей школы печати и медиатехнологий. Бывший участник и победитель конкурса Schoolizdat, а также один из кураторов прошлых лет.<br><br>Хочу выразить огромную благодарность организаторам и участникам конкурса. Благодаря Schoolizdat я улучшил свои профессиональные навыки, узнал много нового из сферы журналистики, выработал в себе много новых полезных качеств, а также обрёл много хороших и верных друзей».<br></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <div style="display: flex;height: 65px;justify-content: center;/*margin-top: 50px;*//*position: relative;*/bottom: 8px;"><button class="btn btn-primary news-button" id="prev-button" type="button"><i class="fa fa-angle-left d-xl-flex justify-content-xl-center align-items-xl-center" style="transform: scale(1.76);"></i></button><button class="btn btn-primary news-button" id="next-button" type="button"><i class="fa fa-angle-right d-xl-flex justify-content-xl-center align-items-xl-center" style="transform: scale(1.76);"></i></button></div>
+                        <div style="display: flex;height: 76px;justify-content: center;position: initial;padding: 8px;"><button class="btn btn-primary news-button" id="prev-button" type="button"><i class="fa fa-angle-left d-xl-flex justify-content-xl-center align-items-xl-center" style="transform: scale(1.76);"></i></button><button class="btn btn-primary news-button" id="next-button" type="button"><i class="fa fa-angle-right d-xl-flex justify-content-xl-center align-items-xl-center" style="transform: scale(1.76);"></i></button></div>
                     </div>
                 </div>
             </div>
@@ -420,12 +365,14 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/fullpage..scrolloverflow.min.js"></script>
+    <script src="assets/js/fullpage.min.js"></script>
+    <script src="assets/js/fullpage.use.js"></script>
     <script src="assets/js/horisontal_sliders_lib.js"></script>
     <script src="assets/js/jquery-ui.js"></script>
     <script src="assets/js/menu_tile_toggler.js"></script>
     <script src="assets/js/news_box_anim.js"></script>
     <script src="assets/js/nom_tile_anim.js"></script>
-    <script src="assets/js/rslider_lib.js"></script>
     <script src="assets/js/rslider.mjs" type="module"></script>
 </body>
 

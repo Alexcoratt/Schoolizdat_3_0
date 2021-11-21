@@ -272,19 +272,16 @@ class HatItem{
         this.node = node;
         this.isCurrent = this.node.classList.contains("active");
         this.textBoxClassName = textBoxClassName;
-        this.fullText = this.getText();
-        this.setText(this.splitText(this.fullText));
+        this.fullText = this.node.getElementsByClassName(this.textBoxClassName)[0].innerHTML;
     }
     
     getClone(){
-        return new HatItem(this.node.cloneNode(true));
-    }
-        
-    getText(){
-        return this.node.getElementsByClassName(this.textBoxClassName)[0].innerHTML;
+        var result = new HatItem(this.node.cloneNode(true), this.textBoxClassName);
+        result.setText(this.getText());
+        return result;
     }
     
-    getFullText(){
+    getText(){
         return this.fullText;
     }
     
@@ -299,8 +296,9 @@ class HatItem{
         return text
     }
     
-    setText(text){
-        this.node.getElementsByClassName(this.textBoxClassName)[0].innerHTML = text;
+    setText(text, noSplit=true){
+        this.fullText = text
+        this.node.getElementsByClassName(this.textBoxClassName)[0].innerHTML = (noSplit) ? text : this.splitText(text);
     }
     
     activate(){
@@ -345,6 +343,10 @@ class HatItem{
         return this.node.offsetWidth;
     }
     
+    getHeight(){
+        return this.node.offsetHeight;
+    }
+    
     setDuration(duration){
         this.node.style.transitionDuration = (duration / 1000) + "s";
     }
@@ -380,14 +382,19 @@ class HatSlider{
         return "relative"
     }
     
+    setHeight(height, unit="px"){
+        this.node.style.height = height + unit;
+    }
+    
     getItemPos(){
         return "initial"
     }
     
-    addItem(){
-        var len = this.items.length;
-        this.items.push(this.items[len - 1].getClone());
-        this.node.appendChild(this.items[len].node);
+    addItem(item){
+        if (item == undefined)
+            item = this.items[this.items.length - 1].getClone();
+        this.items.push(item);
+        this.node.appendChild(item.node);
     }
     
     removeItem(num){
@@ -481,11 +488,16 @@ class CycledHatSlider extends HatSlider{
         var length = this.items.length;
         while (length < 5){
             for (var i = 0; i < length; i++){
-                this.items.push(this.items[i].getClone());
-                this.node.appendChild(this.items[this.items.length - 1].node);
+                this.addItem(this.items[i].getClone());
             }   
             length = this.items.length
         }
+        this.slideMode = "multi";
+    }
+    
+    setSlideMode(mode="multi"){
+        this.slideMode = mode;
+        this.calculateParams();
     }
     
     getSelfPos(){
@@ -501,25 +513,38 @@ class CycledHatSlider extends HatSlider{
         var parentWidth = self.node.parentElement.offsetWidth;
         self.items[currentNum].setMargin();
         self.itemWidth = self.items[currentNum].getWidth();
-        self.width = self.itemWidth * self.items.length;
-        self.activeWidth = parentWidth - self.itemWidth;
+        if (this.slideMode == "multi"){
+            self.activeWidth = parentWidth - self.itemWidth;
+            self.baseLeft = -1.5 * self.itemWidth;
+        }
+        else if (this.slideMode == "single"){
+            self.activeWidth = parentWidth;
+            self.baseLeft = -2 * self.itemWidth;
+        }
         self.activeMargin = (self.activeWidth - self.itemWidth) / 2;
-        self.baseLeft = -1.5 * self.itemWidth;
+        self.width = self.itemWidth * 4 + self.activeWidth;
+        self.setWidth(self.width);
+        self.setHeight(this.items[currentNum].getHeight() + 64);
         self.slideTo(currentNum);
     }
     
     slideTo(num, self=this, noDuration=false){
+        
+        function f(x){
+            return (x + 1 + Math.abs(2 - Math.abs(x - 3))) / 2 - 1;
+        } //График функции принимает значения по y = 0 при x < 2, y = 1 при x = 2, y = 2 - в остальных случаях 
+        
         var index, i, len = self.items.length;
         for (i = 0; i < len; i++){
             self.items[i].makeNear();
             self.items[i].deactivate();
         }
-        for (i = 0; i < len; i++){
-            if (i < len - 3){
-                self.items[(num + 2 + len + i) % len].makeFar();
-            }
+        for (i = 0; i < len - 3; i++){
+            self.items[(num + 2 + len + i) % len].makeFar();
+        }
+        for (i = 0; i < 5; i++){
             index = (len + num - 2 + i) % len;
-            self.items[index].setLeft(self.baseLeft + self.itemWidth * i + (2 - Math.abs(i - 3) + Math.abs(2 - Math.abs(i - 3))) / 2 * self.activeMargin); // при значениях i = 2 или 3 необходимо добавлять дополнительные промежутки, поскольку элемент №2 - средний. График той длинной функции с модулями выглядит, как _/\_, принимающий значения по y = 1 при x = 2 или 4, y = 2 при x = 3, y = 0 - в остальных случаях 
+            self.items[index].setLeft(self.baseLeft + self.itemWidth * i + f(i) * self.activeMargin); // при значениях i = 2 или 3 необходимо добавлять дополнительные промежутки, поскольку элемент №2 - средний
         }
         self.items[num].activate();
     }
