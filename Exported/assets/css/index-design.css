@@ -382,7 +382,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .rslide-inner {
   width: 100%;
-  height: inherit;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -905,7 +905,7 @@ h1, h2, h3, h4, h5, h6, p {
   transition-duration: .5s;
   align-items: center;
   display: flex;
-  padding: 8px;
+  padding: 15px;
 }
 
 .file-button:hover {
@@ -1039,6 +1039,7 @@ file-button {
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
+  justify-content: center;
 }
 
 .logo-link {
@@ -1137,8 +1138,16 @@ file-button {
 
 @media (min-width: 580px) {
   .text-season {
-    max-width: 647px;
     min-width: 450px;
   }
+}
+
+.nom-page-title-box.documents {
+  font-size: 16pt;
+  padding-right: 65px;
+  margin-top: 30px;
+}
+
+.rslide-content {
 }
 

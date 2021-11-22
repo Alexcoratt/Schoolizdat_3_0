@@ -1,7 +1,3 @@
-import "./horisontal_sliders_lib.js";
-import "./rslider_lib.js";
-
-
 class NewsSingleBox extends SingleBox{
 
     constructor(node, headingClass="news-heading", paragraphClass="news-paragraph", imageClass="news-image"){
@@ -200,6 +196,5 @@ $("#next-button").click(getListener(articleSlider.slideNext, articleSlider));
 window.addEventListener("resize", getListener(articleSlider.calculateParams, articleSlider), {passive: false});
 
 var newsCar = new NewsCarousel(document.getElementById("carousel"), articleSlider);
-newsCar.getSingleBox(0, 0, 1).setText();
 newsCar.bindAll();
 articleSlider.ready();

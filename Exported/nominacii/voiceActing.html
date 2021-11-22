@@ -17,13 +17,14 @@
     <link rel="stylesheet" href="../assets/css/other-design.css">
 </head>
 
-<body>
+<body><x-navbar-page></x-navbar-page>
+<!--@if(false)-->
     <div id="navbar" class="navbar">
         <div class="col navbar-col"><a class="logo-link" href="../index.html"></a></div>
         <div class="col navbar-col season-theme">
             <div>
                 <h1 style="font-size: 17px;text-align: center;">ТЕМА СЕЗОНА:</h1>
-                <h1 style="font-size: 22px;text-align: center;">СОЦИАЛЬНАЯ МОБИЛЬНОСТЬ</h1>
+                <h1 style="font-size: 22px;text-align: center;">МИФ В СОВРЕМЕННОЙ ЖИЗНИ</h1>
             </div>
         </div>
         <div class="col navbar-col">
@@ -44,7 +45,7 @@
             </div>
             <div class="footer">
                 <div class="footer-row">
-                    <div style="width: 20%;display: flex;justify-content: center;align-items: center;"><a class="social-link" href="https://vk.com/schoolizdat"><i class="fa fa-vk"></i></a></div>
+                    <div style="width: 20%;display: flex;justify-content: center;align-items: center;"><a class="social-link" href="https://vk.com/schoolizdat" target="_blank"><i class="fa fa-vk"></i></a></div>
                     <div><a class="footer-link footer-paragraph" href="mailto: org@schoolizdat.ru">org@schoolizdat.ru<br></a>
                         <p class="footer-paragraph">+7 (812) 315-06-37</p>
                     </div>
@@ -58,7 +59,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div><!--@endif-->
     <div class="rslide-header" style="top: 70px;">
         <h1 class="display-2 text-uppercase text-center d-xl-flex justify-content-xl-center align-items-xl-center backheading" style="font-family: Montserrat, sans-serif;color: #565151;">н о м и н а ц и и</h1>
         <h1 class="rslide-heading" style="color: #565151;">номинации</h1>
@@ -180,7 +181,8 @@
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/bs-init.js"></script>
-    <script src="../assets/js/horisontal_sliders_lib.js"></script>
+    <script src="../assets/js/A_horisontal_sliders_lib.js"></script>
+    <script src="../assets/js/A_rslider_lib.js"></script>
     <script src="../assets/js/jquery-ui.js"></script>
     <script src="../assets/js/menu_tile_toggler.js"></script>
 </body>

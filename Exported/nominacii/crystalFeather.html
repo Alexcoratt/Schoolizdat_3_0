@@ -17,13 +17,14 @@
     <link rel="stylesheet" href="../assets/css/other-design.css">
 </head>
 
-<body>
+<body><x-navbar-page></x-navbar-page>
+<!--@if(false)-->
     <div id="navbar" class="navbar">
         <div class="col navbar-col"><a class="logo-link" href="../index.html"></a></div>
         <div class="col navbar-col season-theme">
             <div>
                 <h1 style="font-size: 17px;text-align: center;">ТЕМА СЕЗОНА:</h1>
-                <h1 style="font-size: 22px;text-align: center;">СОЦИАЛЬНАЯ МОБИЛЬНОСТЬ</h1>
+                <h1 style="font-size: 22px;text-align: center;">МИФ В СОВРЕМЕННОЙ ЖИЗНИ</h1>
             </div>
         </div>
         <div class="col navbar-col">
@@ -44,7 +45,7 @@
             </div>
             <div class="footer">
                 <div class="footer-row">
-                    <div style="width: 20%;display: flex;justify-content: center;align-items: center;"><a class="social-link" href="https://vk.com/schoolizdat"><i class="fa fa-vk"></i></a></div>
+                    <div style="width: 20%;display: flex;justify-content: center;align-items: center;"><a class="social-link" href="https://vk.com/schoolizdat" target="_blank"><i class="fa fa-vk"></i></a></div>
                     <div><a class="footer-link footer-paragraph" href="mailto: org@schoolizdat.ru">org@schoolizdat.ru<br></a>
                         <p class="footer-paragraph">+7 (812) 315-06-37</p>
                     </div>
@@ -58,7 +59,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div><!--@endif-->
     <div class="rslide-header" style="top: 70px;">
         <h1 class="display-2 text-uppercase text-center d-xl-flex justify-content-xl-center align-items-xl-center backheading" style="font-family: Montserrat, sans-serif;color: #565151;">н о м и н а ц и и</h1>
         <h1 class="rslide-heading" style="color: #565151;">номинации</h1>
@@ -154,7 +155,7 @@
                 <div class="d-xl-flex justify-content-xl-center align-items-xl-center main-title-box">
                     <h1 class="main-tile-title-box">Хрустальное перо</h1>
                 </div>
-                <div class="d-xl-flex align-items-xl-center main-tile-box" style="display: block;">
+                <div class="d-xl-flex align-items-xl-center main-tile-box" style="display: block!important;">
                     <div class="nom-page-box-content-container">
                         <div class="nom-image-container"><img src="../assets/img/Nominations/Feather2.svg" style="height: 120px;"></div>
                         <p class="text-left main-text-box" style="font-size: 20px;">В целях поддержки и создания необходимых условий для развития одаренной молодежи, привлечение талантливой молодёжи к обучению в&nbsp;<span style="color: var(--teal);font-weight: bold;">Санкт-Петербургский государственный университет промышленных технологий и дизайна</span>&nbsp;в&nbsp;<span style="color: var(--additional);font-weight: bold;">Высшей школе печати и медиатехнологий</span>&nbsp;на направлениях подготовки "Журналистика" и "Издательское дело" проводится Всероссийская олимпиада школьников "Хрустальное перо".<br></p>
@@ -202,13 +203,14 @@
             </div>
         </div>
         <div class="nom-page-box-container">
-            <div style="margin-top: 30px;display: flex;justify-content: center;"><button class="btn btn-primary" type="button" style="width: 80%;padding: 30px;border-radius: 20px;border-style: none;color: #ffffff;font-size: 24px;background: var(--additional);margin-bottom: 64px;">Список победителей олимпиады "Хрустальное перо"</button></div>
+            <div style="margin-top: 30px;display: flex;justify-content: center;"><a id="winner-list-button" href="../assets/documents/Spisok_pobediteley_2021.pdf">Список победителей олимпиады "Хрустальное перо"</a></div>
         </div>
     </div>
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/bs-init.js"></script>
-    <script src="../assets/js/horisontal_sliders_lib.js"></script>
+    <script src="../assets/js/A_horisontal_sliders_lib.js"></script>
+    <script src="../assets/js/A_rslider_lib.js"></script>
     <script src="../assets/js/jquery-ui.js"></script>
     <script src="../assets/js/menu_tile_toggler.js"></script>
 </body>

@@ -1,6 +1,3 @@
-import "./rslider_lib.js";
-import "./horisontal_sliders_lib.js";
-
 function checkWidth(){
     if (window.innerWidth > 1000){
         fbSlider.setSlideMode("multi");

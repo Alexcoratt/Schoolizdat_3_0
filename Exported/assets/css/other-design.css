@@ -38,3 +38,20 @@
   justify-content: space-between;
 }
 
+#winner-list-button {
+  width: 80%;
+  padding: 30px;
+  border-radius: 20px;
+  border-style: none;
+  color: #ffffff;
+  font-size: 24px;
+  background: var(--additional);
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+#winner-list-button:hover {
+  background-color: var(--main);
+  text-decoration: none;
+}
+
