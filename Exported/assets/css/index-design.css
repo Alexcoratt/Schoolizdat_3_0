@@ -382,7 +382,11 @@ h1, h2, h3, h4, h5, h6, p {
 
 .rslide-inner {
   width: 100%;
+<<<<<<< HEAD
   height: 80vh;
+=======
+  height: 90vh;
+>>>>>>> 463285f (Поправил центрование элементов на больших экранах)
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1149,8 +1153,14 @@ file-button {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .rslide-content {
 }
 
 =======
 >>>>>>> 2052b1d (Исправил все недочеты)
+=======
+.rslide-content {
+}
+
+>>>>>>> 463285f (Поправил центрование элементов на больших экранах)
