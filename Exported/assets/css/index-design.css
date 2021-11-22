@@ -47,7 +47,7 @@ body #pp-nav li .active span {
   transform: scale(1.25);
 }
 
-.rslider-pagination-column {
+#pagination {
   height: 100vh;
   position: fixed;
   align-items: center;
@@ -446,7 +446,6 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .news-content-box {
-  height: 332px;
   background-color: rgba(174,238,223,0.39);
   border-radius: 36px;
   border-style: solid;
@@ -454,7 +453,6 @@ h1, h2, h3, h4, h5, h6, p {
   border-width: thin;
   width: 84%;
   padding-top: 64px;
-  padding-left: 32px;
 }
 
 .news-image {
@@ -495,10 +493,9 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .news-info-bar {
-  position: absolute;
+  /*position: absolute;*/
   bottom: 0;
   width: 100%;
-  left: 0;
   height: 52px;
   display: flex;
   justify-content: center;
@@ -546,6 +543,7 @@ h1, h2, h3, h4, h5, h6, p {
 .news-single-box {
   position: relative;
   bottom: 21px;
+  height: 100%;
 }
 
 .news-tile.active {
@@ -590,10 +588,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 .fb-single-box-inner {
   padding-bottom: 15px;
-}
-
-.fb-single-box.far {
-  opacity: 0;
 }
 
 .nom-single-box {
@@ -1094,7 +1088,6 @@ file-button {
 
 .news-column {
   max-width: 334px;
-  margin: auto;
 }
 
 @media (max-width: 785px) {
@@ -1149,5 +1142,45 @@ file-button {
 }
 
 .rslide-content {
+}
+
+.news-box-heading, .news-box-paragraph {
+  margin-left: 22px;
+  margin-right: 22px;
+  word-wrap: break-word;
+}
+
+#news-row-container {
+  margin: 0;
+  width: inherit;
+  padding: 0;
+  max-width: none;
+}
+
+.news-row {
+  justify-content: center;
+}
+
+@media (max-height: 700px) {
+  .rslide {
+    height: initial!important;
+    max-height: none!important;
+  }
+}
+
+@media (max-width: 700px) {
+  .rslide-header {
+    position: relative;
+  }
+}
+
+html {
+  overflow-x: hidden!important;
+}
+
+@media (max-height: 700px) {
+  #pagination {
+    display: none;
+  }
 }
 

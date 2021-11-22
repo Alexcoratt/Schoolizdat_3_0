@@ -322,6 +322,7 @@ class HatItem{
         if (!classes.contains("far")){
             classes.add("far");
         }
+        this.node.style.opacity = "0";
     }
     
     makeNear(){
@@ -329,6 +330,7 @@ class HatItem{
         if (classes.contains("far")){
             classes.remove("far");
         }
+        this.node.style.opacity = "1";
     }
     
     setWidth(width){
@@ -363,6 +365,8 @@ class HatItem{
 class HatSlider{
     constructor(node, textBoxClassName, duration=1000){
         this.node = node;
+        this.nodeSnapshot = node.cloneNode(true);
+        this.node.parentElement.insertBefore(this.nodeSnapshot, this.node);
         this.items = Array.from(this.node.children);
         this.duration = duration;
         for (var i = 0; i < this.items.length; i++){
@@ -372,6 +376,8 @@ class HatSlider{
             //this.items[i].node.innerHTML = "<h1 style=\"position:absolute\">" + i + "</h1>" + this.items[i].node.innerHTML;    // нумерация для отладки
         }
         this.setPosition(this.getSelfPos());
+        this.isOn = true;
+        this.on();
     }
     
     getItem(num){
@@ -379,7 +385,7 @@ class HatSlider{
     }
     
     getSelfPos(){
-        return "relative"
+        return "relative";
     }
     
     setHeight(height, unit="px"){
@@ -387,7 +393,7 @@ class HatSlider{
     }
     
     getItemPos(){
-        return "initial"
+        return "initial";
     }
     
     addItem(item){
@@ -407,18 +413,20 @@ class HatSlider{
     }
     
     calculateParams(self=this){
-        var currentNum = self.getCurrentNum();
-        var parentWidth = self.node.parentElement.offsetWidth;
-        self.items[currentNum].setMargin();
-        self.itemWidth = self.items[currentNum].getWidth();
-        self.width = self.itemWidth * self.items.length;
-        self.setWidth(self.width);
-        self.baseLeft = (parentWidth - self.itemWidth) / 2;
-        self.node.style.left = self.baseLeft + "px";
-        self.activeWidth = self.baseLeft * 2;
-        self.activeMargin = (self.activeWidth - self.itemWidth) / 2;
-        self.activeLeft = self.baseLeft - self.activeMargin;
-        self.slideTo(self.getCurrentNum(), self, true);
+        if (self.isOn) {
+            var currentNum = self.getCurrentNum();
+            var parentWidth = self.node.parentElement.offsetWidth;
+            self.items[currentNum].setMargin();
+            self.itemWidth = self.items[currentNum].getWidth();
+            self.width = self.itemWidth * self.items.length;
+            self.setWidth(self.width);
+            self.baseLeft = (parentWidth - self.itemWidth) / 2;
+            self.node.style.left = self.baseLeft + "px";
+            self.activeWidth = self.baseLeft * 2;
+            self.activeMargin = (self.activeWidth - self.itemWidth) / 2;
+            self.activeLeft = self.baseLeft - self.activeMargin;
+            self.slideTo(self.getCurrentNum(), self, true);
+        }
     }
     
     getCurrentNum(){
@@ -457,27 +465,41 @@ class HatSlider{
         this.node.style.position = position;
     }
     
+    off(self=this){
+        self.nodeSnapshot.style.display = "";
+        self.node.style.display = "none";
+        self.isOn = false;
+    }
+    
+    on(self=this){
+        self.nodeSnapshot.style.display = "none";
+        self.node.style.display = "";
+        self.isOn = true;
+    }
+    
     getItem(num){
         return this.items[num];
     }
     
     slideTo(num, self=this, noDuration=false){
-        for (var i = 0; i < self.items.length; i++){
-            self.items[i].deactivate();
-            self.items[i].setMargin();
-            if (Math.abs(i - num) > 1)
-                self.items[i].makeFar();
-            else
-                self.items[i].makeNear();
-        }
-        self.items[num].activate();
-        self.items[num].setMargin(0, self.activeMargin, 0, self.activeMargin);
+        if (self.isOn){
+            for (var i = 0; i < self.items.length; i++){
+                self.items[i].deactivate();
+                self.items[i].setMargin();
+                if (Math.abs(i - num) > 1)
+                    self.items[i].makeFar();
+                else
+                    self.items[i].makeNear();
+            }
+            self.items[num].activate();
+            self.items[num].setMargin(0, self.activeMargin, 0, self.activeMargin);
         
-        $(self.node).animate({
-            left: self.activeLeft - num * self.itemWidth
-        },{
-            duration: (!noDuration) ? self.duration : 0
-        });
+            $(self.node).animate({
+                left: self.activeLeft - num * self.itemWidth
+            },{
+                duration: (!noDuration) ? self.duration : 0
+            });
+        }
     }
 }
 
@@ -490,7 +512,7 @@ class CycledHatSlider extends HatSlider{
             for (var i = 0; i < length; i++){
                 this.addItem(this.items[i].getClone());
             }   
-            length = this.items.length
+            length = this.items.length;
         }
         this.slideMode = "multi";
     }
@@ -501,31 +523,32 @@ class CycledHatSlider extends HatSlider{
     }
     
     getSelfPos(){
-        return "initial"
+        return "initial";
     }
     
     getItemPos(){
-        return "absolute"
+        return "absolute";
     }
 
     calculateParams(self=this){
-        var currentNum = self.getCurrentNum();
-        var parentWidth = self.node.parentElement.offsetWidth;
-        self.items[currentNum].setMargin();
-        self.itemWidth = self.items[currentNum].getWidth();
-        if (this.slideMode == "multi"){
-            self.activeWidth = parentWidth - self.itemWidth;
-            self.baseLeft = -1.5 * self.itemWidth;
+        if (self.isOn) {
+            var currentNum = self.getCurrentNum();
+            var parentWidth = self.node.parentElement.offsetWidth;
+            self.items[currentNum].setMargin();
+            self.itemWidth = self.items[currentNum].getWidth();
+            if (self.slideMode == "multi"){
+                self.activeWidth = parentWidth - self.itemWidth;
+                self.baseLeft = -1.5 * self.itemWidth;
+            }
+            else if (self.slideMode == "single"){
+                self.activeWidth = parentWidth;
+                self.baseLeft = -2 * self.itemWidth;
+            }
+            self.activeMargin = (self.activeWidth - self.itemWidth) / 2;
+            self.width = self.itemWidth * 4 + self.activeWidth;
+            self.setHeight(this.items[currentNum].getHeight() + 64);
+            self.slideTo(currentNum);
         }
-        else if (this.slideMode == "single"){
-            self.activeWidth = parentWidth;
-            self.baseLeft = -2 * self.itemWidth;
-        }
-        self.activeMargin = (self.activeWidth - self.itemWidth) / 2;
-        self.width = self.itemWidth * 4 + self.activeWidth;
-        self.setWidth(self.width);
-        self.setHeight(this.items[currentNum].getHeight() + 64);
-        self.slideTo(currentNum);
     }
     
     slideTo(num, self=this, noDuration=false){
@@ -534,19 +557,21 @@ class CycledHatSlider extends HatSlider{
             return (x + 1 + Math.abs(2 - Math.abs(x - 3))) / 2 - 1;
         } //График функции принимает значения по y = 0 при x < 2, y = 1 при x = 2, y = 2 - в остальных случаях 
         
-        var index, i, len = self.items.length;
-        for (i = 0; i < len; i++){
-            self.items[i].makeNear();
-            self.items[i].deactivate();
+        if (self.isOn){
+            var index, i, len = self.items.length;
+            for (i = 0; i < len; i++){
+                self.items[i].makeNear();
+                self.items[i].deactivate();
+            }
+            for (i = 0; i < len - 3; i++){
+                self.items[(num + 2 + len + i) % len].makeFar();
+            }
+            for (i = 0; i < 5; i++){
+                index = (len + num - 2 + i) % len;
+                self.items[index].setLeft(self.baseLeft + self.itemWidth * i + f(i) * self.activeMargin); // при значениях i = 2 или 3 необходимо добавлять дополнительные промежутки, поскольку элемент №2 - средний
+            }
+            self.items[num].activate();
         }
-        for (i = 0; i < len - 3; i++){
-            self.items[(num + 2 + len + i) % len].makeFar();
-        }
-        for (i = 0; i < 5; i++){
-            index = (len + num - 2 + i) % len;
-            self.items[index].setLeft(self.baseLeft + self.itemWidth * i + f(i) * self.activeMargin); // при значениях i = 2 или 3 необходимо добавлять дополнительные промежутки, поскольку элемент №2 - средний
-        }
-        self.items[num].activate();
     }
 }
 

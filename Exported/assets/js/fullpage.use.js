@@ -15,6 +15,8 @@ new fullpage('#fullpage', {
     
 	menu: '#pagination',
     
+    responsiveHeight: 700,
+    
 	anchors: ['main-slide1', 'season-theme1', 'news1', 'nominations1', 'reviews1'],
     
 	lockAnchors: false,
@@ -24,3 +26,4 @@ new fullpage('#fullpage', {
     normalScrollElements: '.fb-paragraph'
 });
 console.log('pagepiling init')
+

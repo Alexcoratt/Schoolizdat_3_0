@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" style="overflow: hidden;">
+<html lang="ru">
 
 <head>
     <meta charset="utf-8">
@@ -96,10 +96,10 @@
                     <h1 class="rslide-heading">Новости</h1>
                 </div>
                 <div class="rslide-inner">
-                    <div class="container">
+                    <div class="container" id="news-row-container">
                         <div class="row news-row">
                             <!--@foreach($news as $item)-->
-                            <div class="col news-column">
+                            <div class="col news-column single-box">
                                 <div class="news-single-box">
                                     <div style="display: flex;justify-content: center;">
                                         <div class="news-tile">
@@ -109,7 +109,7 @@
                                     <div style="display: flex;justify-content: center;">
                                         <div class="news-content-box">
                                             <h3 class="news-box-heading">{{$item['title']}}<br></h3>
-                                            <p>{!! $item['summary'] !!}<br></p>
+                                            <p class="news-box-paragraph">{!! $item['summary'] !!}<br></p>
                                             <div class="news-info-bar">
                                                 <div class="news-views-count"><i class="fa fa-eye"></i>
                                                     <p class="views-count">{{$item['views']}}</p>
@@ -118,13 +118,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="news-frame-box">
+                                <div class="news-frame-box far">
                                     <div class="news-frame"></div>
                                 </div>
                             </div>
                             <!--@endforeach
 @if(false)-->
-                            <div class="col news-column">
+                            <div class="col news-column single-box">
                                 <div class="news-single-box">
                                     <div style="display: flex;justify-content: center;">
                                         <div class="news-tile">
@@ -134,7 +134,7 @@
                                     <div style="display: flex;justify-content: center;">
                                         <div class="news-content-box">
                                             <h3 class="news-box-heading">Heading</h3>
-                                            <p>Paragraph</p>
+                                            <p class="news-box-paragraph">Paragraph</p>
                                             <div class="news-info-bar">
                                                 <div class="news-views-count"><i class="fa fa-eye"></i>
                                                     <p class="views-count">555</p>
@@ -147,7 +147,7 @@
                                     <div class="news-frame"></div>
                                 </div>
                             </div>
-                            <div class="col news-column">
+                            <div class="col news-column single-box">
                                 <div class="news-single-box">
                                     <div style="display: flex;justify-content: center;">
                                         <div class="news-tile">
@@ -157,7 +157,7 @@
                                     <div style="display: flex;justify-content: center;">
                                         <div class="news-content-box">
                                             <h3 class="news-box-heading">Heading</h3>
-                                            <p>Paragraph</p>
+                                            <p class="news-box-paragraph">Paragraph</p>
                                             <div class="news-info-bar">
                                                 <div class="news-views-count"><i class="fa fa-eye"></i>
                                                     <p class="views-count">555</p>
@@ -172,7 +172,7 @@
                             </div>
                             <!--@endif-->
                         </div>
-                        <div style="width: 100%;display: flex;justify-content: center;margin-top: 12px;height: initial;"><a id="all-news-button" href="news">Все новости</a></div>
+                        <div style="width: 100%;display: flex;justify-content: center;margin-top: 12px;height: initial;"><button class="btn btn-primary news-button" id="news-prev-button" type="button" style="height: initial;"><i class="fa fa-angle-left d-xl-flex justify-content-xl-center align-items-xl-center" style="transform: scale(1.76);"></i></button><a id="all-news-button" href="news/index.html">Все новости</a><button class="btn btn-primary news-button" id="news-next-button" type="button" style="height: initial;"><i class="fa fa-angle-right d-xl-flex justify-content-xl-center align-items-xl-center" style="transform: scale(1.76);"></i></button></div>
                     </div>
                 </div>
             </div>
@@ -298,13 +298,13 @@
                     </div>
                 </div>
             </div>
-            <div id="reviews" class="rslide section">
+            <div id="reviews" class="rslide section" style="padding-top: 12%;">
                 <div class="rslide-header">
                     <h1 class="display-2 text-uppercase text-center d-xl-flex justify-content-xl-center align-items-xl-center backheading">О Т З Ы В Ы</h1>
                     <h1 class="rslide-heading">Отзывы</h1>
                 </div>
                 <div class="rslide-inner">
-                    <div style="overflow: hidden;">
+                    <div style="width: 100%;">
                         <div class="fb-slider" style="height: initial;display: flex;align-items: center;">
                             <div class="fb-single-box">
                                 <div class="fb-single-box-inner">
