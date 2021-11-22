@@ -376,7 +376,7 @@ class HatSlider{
             //this.items[i].node.innerHTML = "<h1 style=\"position:absolute\">" + i + "</h1>" + this.items[i].node.innerHTML;    // нумерация для отладки
         }
         this.setPosition(this.getSelfPos());
-        this.isOn = true;
+        this.isOn = false;
         this.on();
     }
     
@@ -466,14 +466,18 @@ class HatSlider{
     }
     
     off(self=this){
-        self.nodeSnapshot.style.display = "";
-        self.node.style.display = "none";
+        if (self.isOn){
+            self.nodeSnapshot.style.display = "";
+            self.node.style.display = "none";
+        }
         self.isOn = false;
     }
     
     on(self=this){
-        self.nodeSnapshot.style.display = "none";
-        self.node.style.display = "";
+        if (!self.isOn){
+            self.nodeSnapshot.style.display = "none";
+            self.node.style.display = "";
+        }
         self.isOn = true;
     }
     

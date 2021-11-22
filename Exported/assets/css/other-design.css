@@ -36,6 +36,7 @@
 .text-row {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 #winner-list-button {
