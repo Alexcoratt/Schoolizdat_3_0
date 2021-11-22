@@ -382,7 +382,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .rslide-inner {
   width: 100%;
-  height: inherit;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1138,7 +1138,6 @@ file-button {
 
 @media (min-width: 580px) {
   .text-season {
-    max-width: 647px;
     min-width: 450px;
   }
 }
@@ -1147,5 +1146,8 @@ file-button {
   font-size: 16pt;
   padding-right: 65px;
   margin-top: 30px;
+}
+
+.rslide-content {
 }
 
