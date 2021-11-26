@@ -1081,12 +1081,6 @@ file-button {
   }
 }
 
-@media (max-width: 770px) {
-  .news-row {
-    display: block;
-  }
-}
-
 .news-column {
   max-width: 334px;
 }
@@ -1157,6 +1151,8 @@ file-button {
 
 .news-row {
   justify-content: center;
+  display: flex;
+  overflow: hidden;
 }
 
 @media (max-width: 700px) {
@@ -1167,12 +1163,6 @@ file-button {
 
 @media (max-height: 700px) {
   #pagination {
-    display: none;
-  }
-}
-
-@media (max-width: 1000px) {
-  .fb-single-box, .news-column.single-box {
     display: none;
   }
 }

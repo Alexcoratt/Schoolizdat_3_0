@@ -380,6 +380,15 @@ class HatSlider{
         this.on();
     }
     
+    checkView(){
+        for (var i = 0; i < this.items.length; i++){
+            if (this.getItem(i).hasClass("view")){
+                this.slideTo(i);
+                return;
+            }
+        }
+    }
+    
     getItem(num){
         return this.items[num];
     }
