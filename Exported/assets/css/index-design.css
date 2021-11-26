@@ -67,9 +67,7 @@ body #pp-nav li .active span {
 
 .rslide {
   min-height: 100vh;
-  max-width: 100%;
   height: initial!important;
-  /*overflow: hidden;*/
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -207,6 +205,7 @@ body #pp-nav li .active span {
   min-height: 100vh;
   display: flex;
   max-width: 100%;
+  overflow: hidden;
 }
 
 :root {
@@ -1171,5 +1170,11 @@ file-button {
   .fb-single-box.active, .news-column.single-box.active {
     display: block;
   }
+}
+
+/* ниже элемент слайдера, создаваемого скриптом fullpage */
+
+.fp-tableCell {
+  height: initial!important;
 }
 
