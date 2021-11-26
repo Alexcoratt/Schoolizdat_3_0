@@ -334,3 +334,9 @@
   }
 }
 
+@media (max-width: 930px) {
+  #article-slider-buttons {
+    display: none;
+  }
+}
+

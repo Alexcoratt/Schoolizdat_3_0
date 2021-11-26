@@ -198,3 +198,4 @@ window.addEventListener("resize", getListener(articleSlider.calculateParams, art
 var newsCar = new NewsCarousel(document.getElementById("carousel"), articleSlider);
 newsCar.bindAll();
 articleSlider.ready();
+articleSlider.checkView();

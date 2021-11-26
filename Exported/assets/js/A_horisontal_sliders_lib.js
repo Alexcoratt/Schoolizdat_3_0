@@ -382,7 +382,8 @@ class HatSlider{
     
     checkView(){
         for (var i = 0; i < this.items.length; i++){
-            if (this.getItem(i).hasClass("view")){
+            console.log(this.items[i]);
+            if ($(this.items[i].node).hasClass("view")){
                 this.slideTo(i);
                 return;
             }
