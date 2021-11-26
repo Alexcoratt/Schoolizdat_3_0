@@ -550,6 +550,7 @@ class CycledHatSlider extends HatSlider{
             }
             self.activeMargin = (self.activeWidth - self.itemWidth) / 2;
             self.width = self.itemWidth * 4 + self.activeWidth;
+            self.setWidth(self.activeWidth);
             self.setHeight(this.items[currentNum].getHeight() + 64);
             self.slideTo(currentNum);
         }

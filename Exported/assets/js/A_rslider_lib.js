@@ -181,7 +181,7 @@ class RSlider{
             if (!self.isScrolling){
                 var delta = e.deltaY,
                     absDelta = Math.abs(Math.round(delta));
-                self.isMouseWheel = (absDelta == 4) || (absDelta == 16); // адаптивный скроллинг, в подавляющем большинстве случаев верно различающий
+                self.isMouseWheel = (absDelta == 4) || (absDelta == 16); // а��аптивный скроллинг, в подавляющем большинстве случаев верно различающий
                                                                             // скроллинг мышью и тачпадом. (колесико прокручивает страницу на 4 единицы в
                 var direction = Math.sign(delta);                           // chrome, safari, edge, и на 16 - в firefox)
                 self.slideDirection(direction);
