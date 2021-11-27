@@ -34,6 +34,14 @@ class NewsRow extends BoxRow{
     getBoxesNum(){
         return this.singleBoxList.length;
     }
+    
+    getBoxes(){
+        var i, result = [];
+        for (i = 0; i < this.singleBoxList.length; i++){
+            result.push(this.getBox(i));
+        }
+        return result;
+    }
 }
 
 class NewsCarouselItem extends CarouselItem{
@@ -49,6 +57,14 @@ class NewsCarouselItem extends CarouselItem{
         var i, result = 0;
         for (i = 0; i < this.boxRows.length; i++){
             result += this.getRow(i).getBoxesNum();
+        }
+        return result;
+    }
+    
+    getBoxes(){
+        var i, result = [];
+        for (i = 0; i < this.boxRows.length; i++){
+            result = result.concat(this.getRow(i).getBoxes());
         }
         return result;
     }
@@ -72,26 +88,40 @@ class NewsCarousel extends Feed{
         return result;
     }
     
-    bindAll(){
-        var boxesNum = this.getBoxesNum(), i;
+    getBoxes(){
+        var i, result = [];
+        for (i = 0; i < this.items.length; i++){
+            result = result.concat(this.getItem(i).getBoxes());
+        }
+        return result;
+    }
+    
+    checkView(){
+        var boxes = this.getBoxes();
+        for (var i = 0; i < boxes.length; i++){
+            if ($(boxes[i].node).hasClass("view")){
+                this.articleSlider.slideTo(i);
+                return;
+            }
+        }
+    }
+    
+    bindAll(){ 
+        var boxes = this.getBoxes();
+        var len = boxes.length;
+        var i;
         var articleItemsNum = this.articleSlider.getLength();
-        for (i = articleItemsNum; i > boxesNum; i--){
+        for (i = articleItemsNum; i > len; i--){
             this.articleSlider.removeLastItem();
         }
-        for (i = articleItemsNum; i < boxesNum; i++){
+        for (i = articleItemsNum; i < len; i++){
             this.articleSlider.addItem();
         }
         this.articleSlider.calculateParams();
     
-        var itemNum, rowNum, boxNum, counter = 0;
-        for (itemNum = 0; itemNum < this.items.length; itemNum++){
-            for (rowNum = 0; rowNum < this.getItem(itemNum).getLength(); rowNum++){
-                for (boxNum = 0; boxNum < this.getItem(itemNum).getRow(rowNum).getLength(); boxNum++){
-                    this.getSingleBox(itemNum, rowNum, boxNum).bind(this.articleSlider.getItem(counter));
-                    this.getSingleBox(itemNum, rowNum, boxNum).bindButton(this.articleSlider, counter);
-                    counter++;
-                }
-            }
+        for (i = 0; i < len; i++){
+            boxes[i].bind(this.articleSlider.getItem(i));
+            boxes[i].bindButton(this.articleSlider, i);
         }
     }
 }
@@ -176,9 +206,9 @@ class ArticleSlider extends HatSlider{
     
     slideTo(num, self=this, noDuration=false){
         for (var i = 0; i < self.items.length; i++){
-            self.items[i].deactivate();
+            self.getItem(i).deactivate();
         }
-        self.items[num].activate();
+        self.getItem(num).activate();
         
         $(self.node).animate({
             left: self.baseLeft - num * self.itemWidth
@@ -198,4 +228,4 @@ window.addEventListener("resize", getListener(articleSlider.calculateParams, art
 var newsCar = new NewsCarousel(document.getElementById("carousel"), articleSlider);
 newsCar.bindAll();
 articleSlider.ready();
-articleSlider.checkView();
+newsCar.checkView();

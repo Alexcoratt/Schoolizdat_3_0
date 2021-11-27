@@ -113,6 +113,8 @@
   width: 31%;
   max-width: 312px;
   margin: auto;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .news-row {
