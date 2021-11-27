@@ -340,3 +340,20 @@
   }
 }
 
+@media (max-width: 700px) {
+  .article-box {
+    display: block;
+    height: initial;
+  }
+}
+
+@media (max-width: 700px) {
+  .article-image.article-content {
+    height: 158px;
+    width: initial;
+    margin: auto;
+    border-top-left-radius: 17px;
+    border-bottom-right-radius: 0;
+  }
+}
+

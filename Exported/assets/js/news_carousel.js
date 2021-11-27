@@ -14,7 +14,7 @@ class NewsSingleBox extends SingleBox{
         $(this.articleButton).click(function(){
             articleSlider.slideTo(slideNum);
             $("html, body").animate({
-                scrollTop: 0,
+                scrollTop: $(articleSlider.node).offset().top - 150,
             }, {
                 duration: 500,
                 easing: "swing"
