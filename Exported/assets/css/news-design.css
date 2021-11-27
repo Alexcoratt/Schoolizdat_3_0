@@ -72,17 +72,16 @@
   justify-content: start;
   font-size: 20px;
   text-align: left;
-  padding-left: 20px;
 }
 
 .news-text {
   margin-top: 100px;
+  padding: 0 26px;
 }
 
 .news-paragraph {
   color: #000000;
   text-align: left;
-  padding-left: 20px;
 }
 
 .new-button, .new-button:focus {
@@ -344,6 +343,7 @@
   .article-box {
     display: block;
     height: initial;
+    margin: 0 12px 0 12px;
   }
 }
 
@@ -354,6 +354,12 @@
     margin: auto;
     border-top-left-radius: 17px;
     border-bottom-right-radius: 0;
+  }
+}
+
+@media (max-width: 930px) {
+  .article-text.article-content {
+    padding-right: 32px;
   }
 }
 
