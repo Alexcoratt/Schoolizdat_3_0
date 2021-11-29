@@ -68,7 +68,7 @@
 }
 
 .news-heading {
-  color: #000000;
+  color: #313131;
   justify-content: start;
   font-size: 20px;
   text-align: left;
@@ -80,7 +80,7 @@
 }
 
 .news-paragraph {
-  color: #000000;
+  color: #313131;
   text-align: left;
 }
 
@@ -187,12 +187,12 @@
 }
 
 .article-heading {
-  color: #000000;
+  color: #313131;
   margin-bottom: 24px;
 }
 
 .article-paragraph {
-  color: #000000;
+  color: #313131;
 }
 
 #article-slider-buttons {
@@ -263,24 +263,16 @@
 
 .step-box {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-around;
   margin-bottom: 12px;
-  border-style: solid;
-  border-color: #599d21;
-  border-width: thin;
-  border-radius: 34px;
   padding: 14px;
 }
 
 .step-heading {
   min-width: 74px;
-  height: 40px;
-  border-radius: 20px;
-  background: var(--additional);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
   margin-left: 20px;
   margin-right: 20px;
 }
@@ -288,9 +280,11 @@
 .step-paragraph {
   margin-top: auto;
   margin-bottom: auto;
-  font-size: 20px;
-  color: var(--dark);
-  padding: 14px;
+  font-size: 16px;
+  color: #313131;
+  padding-left: 20px;
+  border-left-style: solid;
+  border-left-color: var(--additional);
 }
 
 .high-step-box {
