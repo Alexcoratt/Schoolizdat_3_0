@@ -11,7 +11,7 @@
   height: 174px;
   width: 270px;
   background-color: var(--additional);
-  border-radius: 16px;
+  border-radius: 15px;
   z-index: 0;
   justify-content: center;
   box-shadow: 0.5px 2px 11px var(--secondary);
@@ -38,7 +38,7 @@
   border-color: #eeeeee;
   border-width: 3px;
   border-style: solid;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 .img-box {
@@ -54,7 +54,7 @@
   height: 320px;
   width: 240px;
   background: rgba(238,238,238,0.45);
-  border-radius: 20px;
+  border-radius: 15px;
   margin-left: 38px;
   position: relative;
   top: -70px;
@@ -162,7 +162,7 @@
   margin: 10px;
   margin-top: 0;
   margin-bottom: 0;
-  border-radius: 17px;
+  border-radius: 15px;
 }
 
 .article-image {
@@ -253,6 +253,7 @@
 .nom-page-box-content-container {
   display: flex;
   grid-gap: 0 56px;
+  padding-left: 50px;
 }
 
 @media (max-width: 644px) {

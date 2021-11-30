@@ -15,10 +15,9 @@
 }
 
 .burger-icon {
-  margin-right: 10px;
+  margin-right: 50px;
   cursor: pointer;
   max-width: 40px;
-  margin-left: auto;
   z-index: 5;
 }
 

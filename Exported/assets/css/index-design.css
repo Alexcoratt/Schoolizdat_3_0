@@ -327,7 +327,7 @@ h1, h2, h3, h4, h5, h6, p {
   justify-content: center;
   align-items: center;
   background-color: rgba(224,254,201,0.43);
-  border-radius: 20px;
+  border-radius: 15px;
   border-color: white;
   border-style: solid;
   border-width: 1px;
@@ -350,7 +350,7 @@ h1, h2, h3, h4, h5, h6, p {
   justify-content: center;
   border-width: 3px;
   border-style: solid;
-  border-radius: 20px;
+  border-radius: 15px;
   transition-duration: .5s;
 }
 
@@ -360,7 +360,7 @@ h1, h2, h3, h4, h5, h6, p {
   height: 176px;
   width: 160px;
   background-color: var(--accent);
-  border-radius: 16px;
+  border-radius: 15px;
   z-index: 0;
   align-items: flex-end;
   justify-content: center;
@@ -441,7 +441,7 @@ h1, h2, h3, h4, h5, h6, p {
 .news-tile {
   height: 188px;
   background-color: var(--accent);
-  border-radius: 20px;
+  border-radius: 15px;
   position: relative;
   top: 40px;
   width: 92%;
@@ -454,7 +454,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .news-content-box {
   background-color: rgba(174,238,223,0.39);
-  border-radius: 36px;
+  border-radius: 15px;
   border-style: solid;
   border-color: #ffffff;
   border-width: thin;
@@ -659,7 +659,7 @@ h1, h2, h3, h4, h5, h6, p {
   background-color: #ffffff;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  padding-left: 50px;
+  /*padding-left: 50px;*/
   box-shadow: 0px 0px 7px rgba(143,143,143,0.51);
 }
 
@@ -692,8 +692,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .nom-page-title-box {
-  color: var(--teal);
-  font-weight: bold;
+  color: #565151;
   font-size: 33px;
   margin-top: 18px;
   margin-bottom: 30px;
@@ -734,7 +733,7 @@ h1, h2, h3, h4, h5, h6, p {
 .news-button, .news-button:focus {
   background-color: var(--accent);
   color: var(--gray-dark);
-  border-radius: 17px;
+  border-radius: 15px;
   height: 100%;
   font-size: 18pt;
   width: 85px;
@@ -769,7 +768,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .fb-element.fb-header {
   border-style: solid;
-  border-radius: 12px;
+  border-radius: 15px;
   border-color: var(--accent);
   border-width: 4px;
   position: relative;
@@ -841,13 +840,14 @@ h1, h2, h3, h4, h5, h6, p {
   position: relative;
   top: 10px;
   background: rgba(239,239,239,0.32);
-  border-radius: 12px;
+  border-radius: 15px;
   border-style: solid;
   border-width: 2px;
   border-color: rgba(255,255,255,0.5);
   padding-left: 133px;
-  padding-right: 14px;
+  padding-right: 10px;
   display: flex;
+  padding-top: 15px;
 }
 
 .fb-header-image {
@@ -856,7 +856,7 @@ h1, h2, h3, h4, h5, h6, p {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 29px;
+  border-radius: 15px;
   box-shadow: 5px 8px rgba(195,254,147,0.96);
   position: absolute;
   top: -48px;
@@ -876,7 +876,7 @@ h1, h2, h3, h4, h5, h6, p {
   color: var(--gray-dark);
   height: 50px;
   width: 260px;
-  border-radius: 16px;
+  border-radius: 15px;
   border-style: none;
   transition-duration: .5s;
   display: flex;
@@ -892,18 +892,18 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .rslider-pagination, body #pp-nav ul {
-  background-color: rgba(255,255,255,0.24);
-  box-shadow: rgba(0,0,0,0.36) 0 0 8px;
-  border-radius: 18px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #ffffff;
+  /*background-color: rgba(255,255,255,0.24);*/
+  /*box-shadow: rgba(0,0,0,0.36) 0 0 8px;*/
+  /*border-radius: 18px;*/
+  /*border-style: solid;*/
+  /*border-width: 1px;*/
+  /*border-color: #ffffff;*/
 }
 
 .file-button, .file-button:focus {
   background: var(--accent);
   justify-content: center;
-  color: var(--gray-dark);
+  color: #313131;
   border-radius: 22px;
   border-style: none;
   transition-duration: .5s;
@@ -912,7 +912,7 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 15px;
   height: 48px;
   text-align: center;
-  width: 100px;
+  /*width: 100px;*/
   margin: 6px;
 }
 
@@ -1045,7 +1045,7 @@ file-button {
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .logo-link {
@@ -1055,6 +1055,7 @@ file-button {
   height: 100%;
   background-size: contain;
   background-position: left;
+  margin-left: 130px;
 }
 
 .logo-link.main {
