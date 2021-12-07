@@ -601,6 +601,7 @@ h1, h2, h3, h4, h5, h6, p {
   max-width: 500px;
   padding-left: 10px;
   padding-right: 10px;
+  max-height: 1003px;
 }
 
 .fb-single-box-inner {
@@ -800,9 +801,9 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 20px;
   padding-top: 30px;
   font-size: 17px;
-  /*height: calc(100vh - 400px - 120px - 107px);*/
   /*min-height: 200px;*/
   /*overflow-y: auto;*/
+  max-height: 602px;
 }
 
 .fb-paragraph {
