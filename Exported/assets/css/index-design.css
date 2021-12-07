@@ -709,7 +709,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .nom-page-main-box {
-  padding: 30px 0;
+  padding: 30px 41px;
 }
 
 .nom-page-box {
@@ -1051,6 +1051,7 @@ file-button {
   padding-left: 20px;
   padding-right: 20px;
   justify-content: flex-end;
+  min-width: 33%;
 }
 
 .logo-link {

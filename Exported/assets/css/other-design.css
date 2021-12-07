@@ -12,6 +12,7 @@
 
 .navbar-col.season-theme {
   height: initial;
+  min-width: 34%;
 }
 
 @media (max-width: 532px) {
