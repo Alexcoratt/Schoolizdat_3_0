@@ -56,6 +56,7 @@ body #pp-nav li .active span {
   top: 0;
   width: 5em;
   z-index: 5;
+  padding: 0;
 }
 
 .news-block {
@@ -137,7 +138,7 @@ body #pp-nav li .active span {
   height: 100vh;
   width: 325px;
   top: 0;
-  background-color: #ECECEC;
+  background-color: #F3F3F3;
   z-index: 4;
   display: none;
 }
@@ -900,12 +901,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .rslider-pagination, body #pp-nav ul {
-  /*background-color: rgba(255,255,255,0.24);*/
-  /*box-shadow: rgba(0,0,0,0.36) 0 0 8px;*/
-  /*border-radius: 18px;*/
-  /*border-style: solid;*/
-  /*border-width: 1px;*/
-  /*border-color: #ffffff;*/
+  margin: 0;
 }
 
 .file-button, .file-button:focus {
@@ -1175,7 +1171,7 @@ file-button {
   }
 }
 
-@media (max-height: 700px) {
+@media (max-height: 800px) {
   #pagination {
     display: none;
   }
@@ -1267,6 +1263,12 @@ file-button {
 @media (max-width: 785px) {
   .footer-dev-col {
     text-align: left;
+  }
+}
+
+@media (max-width: 668px) {
+  #pagination {
+    display: none;
   }
 }
 
