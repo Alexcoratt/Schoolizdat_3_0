@@ -268,15 +268,21 @@ class SlideButton{      // не является эффективным ввид
 
 class HatItem{
     
-    constructor(node, textBoxClassName){
+    constructor(node, textBoxClassName, duration=500){
         this.node = node;
         this.isCurrent = this.node.classList.contains("active");
         this.textBoxClassName = textBoxClassName;
-        this.fullText = this.node.getElementsByClassName(this.textBoxClassName)[0].innerHTML;
+        try {
+            this.fullText = this.node.getElementsByClassName(this.textBoxClassName)[0].innerHTML;
+        } catch (TypeError){
+            console.log("Wrong text box classname: " + textBoxClassName + " for " + this);
+            this.fullText = undefined;
+        }
+        this.setDuration(duration);
     }
     
     getClone(){
-        var result = new HatItem(this.node.cloneNode(true), this.textBoxClassName);
+        var result = new HatItem(this.node.cloneNode(true), this.textBoxClassName, this.duration);
         result.setText(this.getText());
         return result;
     }
@@ -297,8 +303,12 @@ class HatItem{
     }
     
     setText(text, noSplit=true){
-        this.fullText = text
-        this.node.getElementsByClassName(this.textBoxClassName)[0].innerHTML = (noSplit) ? text : this.splitText(text);
+        if (this.fullText != undefined){
+            this.fullText = text
+            this.node.getElementsByClassName(this.textBoxClassName)[0].innerHTML = (noSplit) ? text : this.splitText(text);
+        }
+        else
+            console.log(this + " text box is unavailable");
     }
     
     activate(){
@@ -322,6 +332,7 @@ class HatItem{
         if (!classes.contains("far")){
             classes.add("far");
         }
+        this.node.style.transitionDuration = "0";
         this.node.style.opacity = "0";
     }
     
@@ -331,6 +342,7 @@ class HatItem{
             classes.remove("far");
         }
         this.node.style.opacity = "1";
+        this.setDuration(this.duration);
     }
     
     setWidth(width){
@@ -350,6 +362,7 @@ class HatItem{
     }
     
     setDuration(duration){
+        this.duration = duration;
         this.node.style.transitionDuration = (duration / 1000) + "s";
     }
     
@@ -370,8 +383,7 @@ class HatSlider{
         this.items = Array.from(this.node.children);
         this.duration = duration;
         for (var i = 0; i < this.items.length; i++){
-            this.items[i] = new HatItem(this.items[i], textBoxClassName);
-            this.items[i].setDuration(this.duration);
+            this.items[i] = new HatItem(this.items[i], textBoxClassName, this.duration);
             this.items[i].setPosition(this.getItemPos());
             //this.items[i].node.innerHTML = "<h1 style=\"position:absolute\">" + i + "</h1>" + this.items[i].node.innerHTML;    // нумерация для отладки
         }
@@ -518,16 +530,28 @@ class HatSlider{
 
 class CycledHatSlider extends HatSlider{
     
-    constructor(node, duration=1000){
-        super(node, duration);
-        var length = this.items.length;
-        while (length < 5){
-            for (var i = 0; i < length; i++){
-                this.addItem(this.items[i].getClone());
-            }   
-            length = this.items.length;
-        }
+    constructor(node, textBoxClassName, duration=1000){
+        super(node, textBoxClassName, duration);
+        
         this.slideMode = "multi";
+        
+        this.maxItemsCount = 0;
+        
+        this.node.style.overflowX = "hidden";
+        this.setWidth(100, "%");
+        this.setHeight(this.items[0].getHeight() + 10);
+        
+        this.calculateParams();
+    }
+    
+    fillWithItems(self=this){
+        var length = self.items.length;
+        while (self.items.length < self.maxItemsCount + 3){
+            for (var i = 0; i < length; i++){
+                self.addItem(self.items[i].getClone());
+            }
+        }
+        self.calculateParams();
     }
     
     setSlideMode(mode="multi"){
@@ -536,7 +560,7 @@ class CycledHatSlider extends HatSlider{
     }
     
     getSelfPos(){
-        return "initial";
+        return "relative";
     }
     
     getItemPos(){
@@ -544,25 +568,26 @@ class CycledHatSlider extends HatSlider{
     }
 
     calculateParams(self=this){
-        if (self.isOn) {
-            var currentNum = self.getCurrentNum();
-            var parentWidth = self.node.parentElement.offsetWidth;
-            self.items[currentNum].setMargin();
-            self.itemWidth = self.items[currentNum].getWidth();
-            if (self.slideMode == "multi"){
-                self.activeWidth = parentWidth - self.itemWidth;
-                self.baseLeft = -1.5 * self.itemWidth;
-            }
-            else if (self.slideMode == "single"){
-                self.activeWidth = parentWidth;
-                self.baseLeft = -2 * self.itemWidth;
-            }
-            self.activeMargin = (self.activeWidth - self.itemWidth) / 2;
-            self.width = self.itemWidth * 4 + self.activeWidth;
-            self.setWidth(self.activeWidth);
-            self.setHeight(this.items[currentNum].getHeight() + 64);
-            self.slideTo(currentNum);
+        var currentNum = self.getCurrentNum();
+        var parentWidth = self.node.parentElement.offsetWidth;
+        self.items[currentNum].setMargin();
+        self.itemWidth = self.items[currentNum].getWidth();
+        self.itemMargin = 0;
+        if (self.slideMode == "multi"){
+            self.activeWidth = parentWidth - self.itemWidth;
+            self.baseLeft = -1.5 * self.itemWidth;
         }
+        else if (self.slideMode == "single"){
+            self.activeWidth = parentWidth;
+            self.baseLeft = -2 * self.itemWidth;
+        }
+        self.activeMargin = (self.activeWidth - self.itemWidth) / 2;
+        self.width = self.itemWidth * 4 + self.activeWidth;
+        
+        self.maxItemsCount = Math.ceil(self.node.offsetWidth / (self.itemWidth + self.activeMargin * 2));
+        
+        self.setHeight(this.items[currentNum].getHeight() + 64);
+        self.slideTo(currentNum);
     }
     
     slideTo(num, self=this, noDuration=false){

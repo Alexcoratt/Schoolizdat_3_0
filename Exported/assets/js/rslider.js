@@ -30,6 +30,7 @@ function checkWidth(){
 
 var fbSlider = new CycledHatSlider(document.getElementsByClassName("fb-slider")[0], "fb-paragraph", 700);
 fbSlider.calculateParams();
+fbSlider.fillWithItems();
 $("#prev-button").click(getListener(fbSlider.slidePrevious, fbSlider));
 $("#next-button").click(getListener(fbSlider.slideNext, fbSlider));
 

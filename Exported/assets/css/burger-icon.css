@@ -1,5 +1,5 @@
 .burger-line.top.active {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
 }
 
 .burger-line.middle.active {
@@ -9,7 +9,7 @@
 }
 
 .burger-line.bottom.active {
-  transform: translateY(-8px) rotate(495deg);
+  transform: translateY(-7px) rotate(495deg);
   /*width: 0;*/
   /*opacity: 0;*/
 }
@@ -22,10 +22,10 @@
 
 .burger-line {
   width: 26px;
-  height: 3px;
+  height: 2px;
   background-color: #FFFFFF;
   margin: 5px;
-  border-radius: 26px;
+  border-radius: 2px;
   transition-duration: .2s;
 }
 
