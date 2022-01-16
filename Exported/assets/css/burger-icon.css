@@ -17,6 +17,7 @@
 .burger-icon {
   cursor: pointer;
   max-width: 40px;
+  z-index: 5;
 }
 
 .burger-line {

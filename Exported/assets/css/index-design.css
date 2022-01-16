@@ -406,6 +406,7 @@ h1, h2, h3, h4, h5, h6, p {
   height: 100%;
   display: flex;
   align-items: center;
+  z-index: 5;
 }
 
 #log-in-link:hover {
@@ -1159,6 +1160,7 @@ file-button {
   justify-content: center;
   display: flex;
   overflow: hidden;
+  padding: 0 24px;
 }
 
 @media (max-width: 700px) {
@@ -1183,6 +1185,8 @@ file-button {
 
 .fp-tableCell {
   height: initial!important;
+  width: 100%;
+  margin: auto;
 }
 
 @media (max-width: 700px) {
@@ -1206,7 +1210,6 @@ file-button {
   display: flex;
   justify-content: center;
   padding: 0 24px;
-  margin-top: 32px;
 }
 
 .footer-text-row {
@@ -1235,8 +1238,10 @@ file-button {
 #footer-inner {
   display: flex;
   width: 100%;
-  max-width: 1132px;
-  padding-top: 24px;
+  max-width: 1300px;
+  margin: auto;
+  margin-top: 24px;
+  margin-bottom: 15px;
 }
 
 @media (max-width: 785px) {

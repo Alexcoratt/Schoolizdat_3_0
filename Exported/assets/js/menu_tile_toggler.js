@@ -20,17 +20,21 @@ class NavmenuContainer{
     
     constructor(node, duration=600){
         this.node = node;
+        if (this.node == undefined)
+            console.log("NavmenuContainer is undefined");
         this.duration = duration;
         this.setDuration(duration);
     }
     
     setDuration(duration){
-        this.node.setAttribute("style", "transition-duration: " + (duration / 1000) + "s;");
+        if (this.node != undefined)
+            this.node.setAttribute("style", "transition-duration: " + (duration / 1000) + "s;");
         this.duration = duration;
     }
     
     toggle(){
-        this.node.classList.toggle("active");
+        if (this.node != undefined)
+            this.node.classList.toggle("active");
     }
 }
 
