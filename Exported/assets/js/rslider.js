@@ -37,6 +37,8 @@ $("#next-button").click(getListener(fbSlider.slideNext, fbSlider));
 var newsSlider = new CycledHatSlider(document.getElementsByClassName("news-row")[0], "news-box-paragraph", 700);
 newsSlider.calculateParams();
 newsSlider.setSlideMode("single");
+
+
 $("#news-prev-button").click(getListener(newsSlider.slidePrevious, newsSlider));
 $("#news-next-button").click(getListener(newsSlider.slideNext, newsSlider));
 

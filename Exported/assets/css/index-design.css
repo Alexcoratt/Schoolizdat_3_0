@@ -214,6 +214,7 @@ body #pp-nav li .active span {
   --main: #3BAC92;
   --accent: #C3FE93;
   --additional: #00CC99;
+  --dark-glass: rgba(0,0,0,0.29);
 }
 
 #request {
@@ -402,7 +403,6 @@ h1, h2, h3, h4, h5, h6, p {
   margin-right: 13px;
   font-size: 23px;
   cursor: pointer;
-  z-index: 5;
   height: 100%;
   display: flex;
   align-items: center;
@@ -464,11 +464,10 @@ h1, h2, h3, h4, h5, h6, p {
 .news-content-box {
   background-color: rgba(174,238,223,0.39);
   border-radius: 15px;
-  border-style: solid;
-  border-color: #ffffff;
-  border-width: thin;
-  width: 84%;
+  border-style: none;
   padding-top: 64px;
+  width: 100%;
+  max-width: 330px;
 }
 
 .news-image {
@@ -502,10 +501,6 @@ h1, h2, h3, h4, h5, h6, p {
   position: relative;
   right: 13px;
   top: 5px;
-}
-
-.news-box-heading {
-  margin-bottom: 16px;
 }
 
 .news-info-bar {
@@ -544,7 +539,7 @@ h1, h2, h3, h4, h5, h6, p {
   color: black;
   font-size: 20pt;
   z-index: 2;
-  box-shadow: #000000 0 0 6px;
+  box-shadow: rgba(0,0,0,0.27) 2px 1px 4px;
   transition-duration: .5s;
 }
 
@@ -745,7 +740,7 @@ h1, h2, h3, h4, h5, h6, p {
   color: var(--gray-dark);
   border-radius: 15px;
   height: 100%;
-  font-size: 18pt;
+  font-size: 15pt;
   width: 85px;
   border-style: none;
   z-index: 2;
@@ -1093,7 +1088,7 @@ file-button {
 }
 
 .news-column {
-  max-width: 334px;
+  max-width: 436px;
 }
 
 @media (max-width: 785px) {
@@ -1149,8 +1144,7 @@ file-button {
 }
 
 .news-box-heading, .news-box-paragraph {
-  margin-left: 22px;
-  margin-right: 22px;
+  margin: 0 22px 16px;
   word-wrap: break-word;
 }
 
@@ -1284,5 +1278,26 @@ file-button {
 .heading-work-box.author-photo, .text-work-box.author-photo {
   color: white;
   text-align: left;
+}
+
+.news-box-section {
+  display: flex;
+  justify-content: center;
+}
+
+.navmenu-container {
+  z-index: 5;
+  display: flex;
+  height: 100%;
+  width: 124px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-glass);
+  border-radius: 42px;
+  transition-duration: .5s;
+}
+
+.navmenu-container.active {
+  background-color: rgba(0,0,0,0);
 }
 

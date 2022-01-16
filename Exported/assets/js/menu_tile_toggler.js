@@ -16,6 +16,24 @@ class BurgerLine{
     }
 }
 
+class NavmenuContainer{
+    
+    constructor(node, duration=600){
+        this.node = node;
+        this.duration = duration;
+        this.setDuration(duration);
+    }
+    
+    setDuration(duration){
+        this.node.setAttribute("style", "transition-duration: " + (duration / 1000) + "s;");
+        this.duration = duration;
+    }
+    
+    toggle(){
+        this.node.classList.toggle("active");
+    }
+}
+
 class BurgerIcon{
     
     constructor(node, duration=600){
@@ -43,6 +61,7 @@ function adjustLinks(){
 
 var duration = 750;
 var bi = new BurgerIcon(document.getElementsByClassName("burger-icon")[0], duration);
+var nmc = new NavmenuContainer(document.getElementsByClassName("navmenu-container")[0], duration);
 
 var navbar = $("#navbar");
 var mlo = $("#menu-link-open");
@@ -54,6 +73,7 @@ adjustLinks();
 mlo.click(function(){
     
     bi.toggle(bi);
+    nmc.toggle(nmc);
     mt.toggle({
         effect: "slide",
         direction: "right",
