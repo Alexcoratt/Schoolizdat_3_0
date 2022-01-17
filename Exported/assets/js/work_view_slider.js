@@ -39,7 +39,7 @@ class WorkViewSlider extends CycledHatSlider {
             for (i = 0; i < contents.length; i++){
                 newItem = this.getItem(this.items.length - 1).getClone();
                 newItem.node.style.backgroundImage = "url(\"" + contents[i].getAttribute("imageurl") + "\")";
-                newItem.node.getElementsByClassName("work_link")[0].setAttribute("href", contents[i].getAttribute("imageurl"));
+                newItem.node.getElementsByClassName("work_link")[0].setAttribute("href", contents[i].getAttribute("contenturl"));
                 newItem.node.getElementsByClassName("heading-work-box")[0].innerHTML = contents[i].getAttribute("heading");
                 newItem.node.getElementsByClassName("text-work-box")[0].innerHTML = contents[i].getAttribute("text");
                 this.addItem(newItem);
@@ -55,6 +55,10 @@ var wvs = new WorkViewSlider(document.getElementsByClassName("work-row")[0], "te
 
 $("#next-button").click(getListener(wvs.slideNext, wvs));
 $("#prev-button").click(getListener(wvs.slidePrevious, wvs));
+
+window.addEventListener("resize", function(){
+    wvs.calculateParams();
+});
  
 wvs.readContents();
 wvs.fillWithItems();
