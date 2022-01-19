@@ -31,17 +31,16 @@ class WorkViewSlider extends CycledHatSlider {
         }
     }
     
-    readContents(contentsId="work-output-contents") {
+    readContents(contentsNodes) {
         try {
-            var contents = document.getElementById(contentsId).children;
             var i, j;
             var newItem;
-            for (i = 0; i < contents.length; i++){
+            for (i = 0; i < contentsNodes.length; i++){
                 newItem = this.getItem(this.items.length - 1).getClone();
-                newItem.node.style.backgroundImage = "url(\"" + contents[i].getAttribute("imageurl") + "\")";
-                newItem.node.getElementsByClassName("work_link")[0].setAttribute("href", contents[i].getAttribute("contenturl"));
-                newItem.node.getElementsByClassName("heading-work-box")[0].innerHTML = contents[i].getAttribute("heading");
-                newItem.node.getElementsByClassName("text-work-box")[0].innerHTML = contents[i].getAttribute("text");
+                newItem.node.style.backgroundImage = "url(\"" + contentsNodes[i].getAttribute("imageurl") + "\")";
+                newItem.node.getElementsByClassName("work_link")[0].setAttribute("href", contentsNodes[i].getAttribute("contenturl"));
+                newItem.node.getElementsByClassName("heading-work-box")[0].innerHTML = contentsNodes[i].getAttribute("heading");
+                newItem.node.getElementsByClassName("text-work-box")[0].innerHTML = contentsNodes[i].getAttribute("text");
                 this.addItem(newItem);
             }
             this.removeItem(0);
@@ -59,6 +58,9 @@ $("#prev-button").click(getListener(wvs.slidePrevious, wvs));
 window.addEventListener("resize", function(){
     wvs.calculateParams();
 });
- 
-wvs.readContents();
+
+var contents = document.getElementById("work-output-contents").children;
+$(contents).hide();
+
+wvs.readContents(contents);
 wvs.fillWithItems();
