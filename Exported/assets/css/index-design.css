@@ -214,7 +214,6 @@ body #pp-nav li .active span {
   --main: #3BAC92;
   --accent: #C3FE93;
   --additional: #00CC99;
-  --dark-glass: rgba(0,0,0,0.29);
 }
 
 #request {
@@ -463,9 +462,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .news-content-box {
-  background-color: rgba(174,238,223,0.39);
+  background-color: rgba(174,238,223,0.39)!important;
   border-radius: 15px;
-  border-style: none;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: thin;
   padding-top: 64px;
   width: 100%;
   max-width: 330px;
@@ -1297,12 +1298,31 @@ file-button {
   width: 124px;
   align-items: center;
   justify-content: center;
-  background-color: var(--dark-glass);
   border-radius: 42px;
   transition-duration: .5s;
 }
 
 .navmenu-container.active {
   background-color: rgba(0,0,0,0);
+}
+
+.dark-glass {
+  background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
+}
+
+.light-glass {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+}
+
+.img-work-box.authors-photo {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url("../../assets/img/default.png");
+  margin: 0;
 }
 

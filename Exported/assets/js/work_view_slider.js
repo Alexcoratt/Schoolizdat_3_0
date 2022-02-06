@@ -37,7 +37,7 @@ class WorkViewSlider extends CycledHatSlider {
             var newItem;
             for (i = 0; i < contentsNodes.length; i++){
                 newItem = this.getItem(this.items.length - 1).getClone();
-                newItem.node.style.backgroundImage = "url(\"" + contentsNodes[i].getAttribute("imageurl") + "\")";
+                newItem.node.getElementsByClassName("img-work-box")[0].style.backgroundImage = "url(\"" + contentsNodes[i].getAttribute("imageurl") + "\")";
                 newItem.node.getElementsByClassName("work_link")[0].setAttribute("href", contentsNodes[i].getAttribute("contenturl"));
                 newItem.node.getElementsByClassName("heading-work-box")[0].innerHTML = contentsNodes[i].getAttribute("heading");
                 newItem.node.getElementsByClassName("text-work-box")[0].innerHTML = contentsNodes[i].getAttribute("text");
@@ -59,7 +59,7 @@ window.addEventListener("resize", function(){
     wvs.calculateParams();
 });
 
-var contents = document.getElementById("work-output-contents").children;
+var contents = document.getElementById("work-output-contents").getElementsByClassName("work-output-item");
 $(contents).hide();
 
 wvs.readContents(contents);

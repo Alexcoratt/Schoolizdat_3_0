@@ -57,8 +57,10 @@
 }
 
 .work_link {
+  display: grid;
   text-decoration: none!important;
   height: 100%;
+  border-radius: 29px;
 }
 
 .work-row {
@@ -95,9 +97,14 @@
 
 .img-work-box {
   height: 100px;
+  width: 100px;
   margin: 25px;
   margin-left: auto;
   margin-right: auto;
+  background-image: url("../../assets/img/default.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 .text-work-box, .heading-work-box {
@@ -128,10 +135,6 @@
   margin-left: 50px;
   margin-right: 50px;
   height: inherit;
-  background-image: url("../../assets/img/default.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .height-single-box {
@@ -145,10 +148,13 @@
 
 .heading-work-box {
   font-size: 20px;
+  margin-bottom: 0;
 }
 
 .img-work-box.single-design {
-  height: auto;
+  height: 225px;
+  width: 225px;
+  background-image: url("../../assets/img/Nominations/Single.svg");
 }
 
 .video-frame {
@@ -159,5 +165,23 @@
 
 #work-output {
   padding-bottom: 80px;
+}
+
+.imgs-work-box.single-design {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+}
+
+.img-work-box.mass-media {
+  background-image: url("../../assets/img/Works/magazine.svg");
+}
+
+.text-work-box {
+  margin-top: 15px;
+}
+
+.img-work-box.journalism {
+  background-image: url("../../assets/img/Works/reportage.svg");
 }
 

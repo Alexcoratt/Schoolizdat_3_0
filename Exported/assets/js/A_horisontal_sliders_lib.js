@@ -283,7 +283,7 @@ class HatItem{
     
     getClone(){
         var result = new HatItem(this.node.cloneNode(true), this.textBoxClassName, this.duration);
-        result.setText(this.getText());
+        //result.setText(this.getText());
         return result;
     }
     
