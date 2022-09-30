@@ -1326,3 +1326,29 @@ file-button {
   margin: 0;
 }
 
+.letter.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn.letter {
+  height: 64px;
+  width: 156px;
+  border-radius: 29px;
+  background-color: var(--additional);
+  border-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: inherit;
+}
+
+.btn.letter:hover {
+  background-color: var(--accent);
+  color: black;
+  transition-duration: .5s;
+  box-shadow: 4px 4px 3px black;
+}
+
